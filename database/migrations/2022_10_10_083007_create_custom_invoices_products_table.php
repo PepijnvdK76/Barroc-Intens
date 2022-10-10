@@ -13,14 +13,12 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('users', function (Blueprint $table) {
+        Schema::create('custom_invoices_products', function (Blueprint $table) {
             $table->id();
-            $table->string('name', 45);
-            $table->string('email')->unique();
-            $table->timestamp('email_verified_at')->nullable();
-            $table->string('password');
-            $table->tinyInteger('role_id');
-            $table->rememberToken();
+            $table->unsignedBigInteger('custom_invoice_id')->nullable();
+            $table->unsignedBigInteger('product_id')->nullable();
+            $table->integer('amount');
+            $table->decimal('price_per_product');
             $table->timestamps();
         });
     }
@@ -32,6 +30,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('users');
+        Schema::dropIfExists('custom_invoices_products');
     }
 };
