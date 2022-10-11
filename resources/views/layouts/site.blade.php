@@ -22,7 +22,9 @@
 </head>
 <body class="antialiased">
 @include('components.header')
-<main>
-    {{ $slot }}
+<main class="flex">
+    <div class="container">
+        {{$content}}
+    </div>
 </main>
 </body>
