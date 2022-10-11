@@ -24,5 +24,7 @@ Route::get('/dashboard', function () {
 
 Route::get('/finance', [PagesController::class, 'finance']);
 
+Route::get('/sales', [PagesController::class, 'sales']);
+
 
 require __DIR__.'/auth.php';

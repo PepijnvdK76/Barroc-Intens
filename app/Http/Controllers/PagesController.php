@@ -12,4 +12,9 @@ class PagesController extends Controller
     {
         return view('web-app/finance');
     }
+
+    public function sales()
+    {
+        return view('web-app/sales');
+    }
 }
