@@ -2,15 +2,17 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Company;
 use Illuminate\Http\Request;
 
 class PagesController extends Controller
 {
 
 
-    public function finance()
-    {
-        return view('web-app/finance');
+    public function finance(){
+        $companies = Company::all();
+        return view('web-app/finance')
+            ->with(['companies' => $companies]);
     }
 
     public function sales()

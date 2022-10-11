@@ -21,7 +21,7 @@ return new class extends Migration
             $table->string('house_number', 45);
             $table->string('city');
             $table->string('country_code', 3);
-            $table->enum('type', ['niet gecheckt', 'goed', 'fout'])->default('niet gecheckt');
+            $table->enum('bkr_checked_at', ['niet gecheckt', 'goed', 'fout'])->default('niet gecheckt');
             $table->unsignedBigInteger('contact_id')->nullable();
             $table->timestamps();
         });
