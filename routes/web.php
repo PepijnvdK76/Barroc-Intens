@@ -1,7 +1,13 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+
 use \App\Http\Controllers\PagesController;
+
+use \App\Models\Company;
+
+use \App\Http\Controllers\FinanceController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -27,9 +33,12 @@ Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
 
-Route::get('/finance', [PagesController::class, 'finance']);
+
 
 Route::get('/sales', [PagesController::class, 'sales']);
+
+Route::resource('finance', FinanceController::class);
+Route::get('/finance', [PagesController::class, 'finance']);
 
 
 require __DIR__.'/auth.php';

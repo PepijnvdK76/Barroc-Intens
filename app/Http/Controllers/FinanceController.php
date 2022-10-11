@@ -1,11 +1,11 @@
 <?php
 
 namespace App\Http\Controllers;
-use App\Models\Company;
 
+use App\Models\Company;
 use Illuminate\Http\Request;
 
-class CompaniesController extends Controller
+class FinanceController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,7 +14,9 @@ class CompaniesController extends Controller
      */
     public function index()
     {
-        //
+        $companies = Company::all();
+        return view('/finance')
+            ->with(['companies' => $companies]);
     }
 
     /**
@@ -57,7 +59,9 @@ class CompaniesController extends Controller
      */
     public function edit($id)
     {
-        //
+        $company = Company::Findorfail($id);
+
+        return view('web-app/finance.edit', ['company' => $company]);
     }
 
     /**
@@ -69,7 +73,14 @@ class CompaniesController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+
+        $company = Company::findorfail($id);
+        $company->bkr_checked_at = $request->bkr_checked_at;
+        $company->save();
+
+        $companies = Company::all();
+        return view('web-app/finance')
+            ->with(['companies' => $companies]);
     }
 
     /**
