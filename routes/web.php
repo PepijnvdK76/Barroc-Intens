@@ -17,6 +17,10 @@ use \App\Http\Controllers\PagesController;
 Route::get('/', function () {
     return view('welcome');
 });
+Route::get('/index', [PagesController::class, 'index'])
+    ->name('index');
+Route::get('/bonen', [PagesController::class, 'bonen'])
+    ->name('bonen');
 
 Route::get('/offerte', [PagesController::class, 'offerte']);
 Route::get('/dashboard', function () {

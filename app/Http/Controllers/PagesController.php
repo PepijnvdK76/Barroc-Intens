@@ -29,5 +29,15 @@ class PagesController extends Controller
 
     }
 
+
+    public function index()
+    {
+        return view('web-site/index')  ;
+    }
+    public function bonen()
+    {
+        return view('web-site/beans')  ;
+    }
+
 }
 
