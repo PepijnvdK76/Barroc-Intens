@@ -6,12 +6,12 @@ body{
     background-color: #212121;
     font-family: 'Roboto', sans-serif;
 }
+h1{
+    color:white;
+}
 /*Header*/
 .navbar-area {
     background-color: white ;
-    position: absolute;
-    top: 0;
-    left: 0;
     width: 100%;
     z-index: 99;
     -webkit-transition: all 0.3s ease-out 0s;
@@ -56,7 +56,6 @@ body{
     position: relative;
     -webkit-transition: all 0.3s ease-out 0s;
     transition: all 0.3s ease-out 0s;
-    padding: 20px 0;
 }
 
 @media only screen and (min-width: 768px) and (max-width: 991px), (max-width: 767px) {
