@@ -188,3 +188,12 @@ h1{
     border-top-left-radius: 100%;
 
 }
+
+.klant_aanmaken{
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    margin-top: 2%;
+    margin-left: 3%;
+    font-size: larger;
+}
