@@ -17,4 +17,12 @@ class PagesController extends Controller
     {
         return view('web-app/sales');
     }
+    public function index()
+    {
+        return view('web-site/index')  ;
+    }
+    public function bonen()
+    {
+        return view('web-site/beans')  ;
+    }
 }

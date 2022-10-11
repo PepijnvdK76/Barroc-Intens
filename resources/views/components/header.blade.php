@@ -6,10 +6,14 @@
                         <div class="collapse navbar-collapse sub-menu-bar" id="navbarSupportedContent">
                             <ul id="nav" class="navbar-nav">
                                 <li class="nav-item">
-                                    <img src="{{ Vite::asset('public/content/img/logo6_klein.png') }}" width=75%" alt="...">
+                                    <div>
+                                        <a href="{{ route('index') }}">
+                                        <img  src="{{ Vite::asset('public/content/img/logo6_klein.png') }}" width=75%" alt="...">
+                                        </a>
+                                    </div>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="page-scroll" href="#section2">Bonen</a>
+                                    <a class="page-scroll" href="{{ route('bonen') }}">Bonen</a>
                                 </li>
                                 <li class="nav-item">
                                     <a class="page-scroll" href="#section3">Aparaten</a>
@@ -21,14 +25,8 @@
                                 Contact
                             </div>
                         </a>
-                        <!-- navbar collapse -->
                     </nav>
-                    <!-- navbar -->
             </div>
-            <!-- row -->
         </div>
-
-        <!-- container -->
     </div>
-    <!-- navbar area -->
 </header>
