@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 
     <h1>finance</h1>
     <table class="table table-striped">
@@ -46,6 +47,10 @@
     <x-site-layout>
         <x-slot:content>
             <div class="container" >
+=======
+@extends('layouts.app')
+@section('content')
+>>>>>>> Stashed changes
                 <form>
                     <div class="form-group">
                         <label class="text-white" for="exampleFormControlInput1 ">Email address</label>
@@ -67,8 +72,4 @@
                     </div>
                 </form>
                 <button type="submit" class="btn bg-primary btn-primary mt-3">Submit</button>
-            </div>
-        </x-slot:content>
-    </x-site-layout>
-</body>
-</html>
+@endsection

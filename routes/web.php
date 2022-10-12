@@ -25,8 +25,14 @@ Route::get('/', function () {
 });
 Route::get('/index', [PagesController::class, 'index'])
     ->name('index');
+
 Route::get('/bonen', [PagesController::class, 'bonen'])
     ->name('bonen');
+Route::get('/machines', [PagesController::class, 'machines'])
+    ->name('machines');
+
+Route::get('/contact', [PagesController::class, 'contact'])
+    ->name('contact');
 
 Route::get('/dashboard', function () {
     return view('dashboard');

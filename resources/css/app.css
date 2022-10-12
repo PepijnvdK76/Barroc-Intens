@@ -2,12 +2,18 @@
 @tailwind components;
 @tailwind utilities;
 
-body{
+body,html{
     background-color: #212121;
     font-family: 'Roboto', sans-serif;
+    scrollbar-width: thin;
+
 }
 h1{
     color:white;
+}
+img{
+    max-width: 100%;
+    height: auto;
 }
 /*Header*/
 .navbar-area {
@@ -186,14 +192,58 @@ h1{
     background-color: #ffd700 ;
     border-bottom-left-radius: 100%;
     border-top-left-radius: 100%;
-
+}
+.BarrocYellow{
+    color: #ffd700 ;
+}
+.contactBtn:hover{
+    color: white;
 }
 
-.klant_aanmaken{
+
+.klant_aanmaken {
     display: flex;
     justify-content: start;
     align-items: center;
     margin-top: 2%;
     margin-left: 3%;
     font-size: larger;
+}
+/*Index*/
+.bg-vid {
+
+    /* Add the blur effect */
+    filter: blur(8px);
+    -webkit-filter: blur(5px);
+
+    /* Full height */
+    height: 100%;
+    width: 100%;
+}
+
+/* Position text in the middle of the page/image */
+.bg-text {
+    font-family: 'Big Shoulders Display', cursive;
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0, 0.4); /* Black w/opacity/see-through */
+    color: white;
+    font-size: 38px;
+    border: 3px solid #f1f1f1;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    width: 80%;
+    padding: 20px;
+    text-align: center;
+    border-radius: 25px;
+
+}
+.customCard{
+    background:  #212121;
+    border-radius: 50px;
+}
+.roundedImg{
+
 }

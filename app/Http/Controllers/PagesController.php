@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Company;
+use App\Models\Product;
 use Illuminate\Http\Request;
 
 class PagesController extends Controller
@@ -23,8 +24,24 @@ class PagesController extends Controller
     {
         return view('web-site/index')  ;
     }
+    public function contact()
+    {
+        return view('web-site/contact')  ;
+    }
     public function bonen()
     {
-        return view('web-site/beans')  ;
+        $beans = Product::query()
+            ->where('products_category_id', '=', 1)
+            ->get();
+        return view('web-site/beans')
+            ->with(['beans' => $beans]);
+    }
+    public function machines()
+    {
+        $machines = Product::query()
+            ->where('products_category_id', '=', 2)
+            ->get();
+        return view('web-site/machines')
+            ->with(['machines' => $machines]);
     }
 }
