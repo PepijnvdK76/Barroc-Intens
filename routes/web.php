@@ -37,7 +37,7 @@ Route::get('/dashboard', function () {
 Route::get('/sales', [PagesController::class, 'sales']);
 
 Route::resource('finance', FinanceController::class);
-Route::get('/finance', [PagesController::class, 'finance']);
+Route::get('/finance', [PagesController::class, 'finance'])->name('finance.index');
 
 
 require __DIR__.'/auth.php';
