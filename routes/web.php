@@ -7,6 +7,11 @@ use \App\Http\Controllers\PagesController;
 use \App\Models\Company;
 
 use \App\Http\Controllers\FinanceController;
+use \App\Http\Controllers\NotesController;
+
+
+
+use App\Http\Controllers\ProductsController;
 
 
 /*
@@ -38,6 +43,10 @@ Route::get('/sales', [PagesController::class, 'sales']);
 
 Route::resource('finance', FinanceController::class);
 Route::get('/finance', [PagesController::class, 'finance'])->name('finance.index');
+
+Route::resource('sales', NotesController::class);
+Route::get('/inkoop', [PagesController::class, 'inkoop']);
+Route::resource('inkoop', ProductsController::class);
 
 
 require __DIR__.'/auth.php';
