@@ -7,6 +7,9 @@ use \App\Http\Controllers\PagesController;
 use \App\Models\Company;
 
 use \App\Http\Controllers\FinanceController;
+use \App\Http\Controllers\NotesController;
+
+
 
 
 /*
@@ -38,6 +41,8 @@ Route::get('/sales', [PagesController::class, 'sales']);
 
 Route::resource('finance', FinanceController::class);
 Route::get('/finance', [PagesController::class, 'finance']);
+
+Route::resource('sales', NotesController::class);
 
 
 require __DIR__.'/auth.php';
