@@ -12,7 +12,7 @@
             </thead>
             <tbody>
             <tr>
-                <th scope="row">{{$product->id}}</th>
+                <th scope="row"><a href="{{route('inkoop.show', $product)}}">{{$product->id}}</a></th>
                 <td>{{$product->name}}</td>
                 <td>{{$product->price}}</td>
                 <td class="buttons d-flex">

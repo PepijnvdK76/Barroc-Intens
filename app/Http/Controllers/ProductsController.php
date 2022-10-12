@@ -67,7 +67,8 @@ class ProductsController extends Controller
      */
     public function show($id)
     {
-        //
+        $product = Product::findorfail($id);
+        return view('web-app/inkoop.show', ['product' => $product]);
     }
 
     /**
