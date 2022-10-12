@@ -11,6 +11,8 @@ use \App\Http\Controllers\NotesController;
 
 
 
+use App\Http\Controllers\ProductsController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -43,6 +45,8 @@ Route::resource('finance', FinanceController::class);
 Route::get('/finance', [PagesController::class, 'finance']);
 
 Route::resource('sales', NotesController::class);
+Route::get('/inkoop', [PagesController::class, 'inkoop']);
+Route::resource('inkoop', ProductsController::class);
 
 
 require __DIR__.'/auth.php';

@@ -43,8 +43,6 @@
     <title>Document</title>
 </head>
 <body>
-    <x-site-layout>
-        <x-slot:content>
             <div class="container" >
                 <form>
                     <div class="form-group">
@@ -68,7 +66,5 @@
                 </form>
                 <button type="submit" class="btn bg-primary btn-primary mt-3">Submit</button>
             </div>
-        </x-slot:content>
-    </x-site-layout>
 </body>
 </html>
