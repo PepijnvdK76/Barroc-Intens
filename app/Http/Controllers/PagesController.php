@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Company;
+use App\Models\Product;
 use Illuminate\Http\Request;
 
 class PagesController extends Controller
@@ -13,6 +14,13 @@ class PagesController extends Controller
         $companies = Company::all();
         return view('web-app/finance')
             ->with(['companies' => $companies]);
+    }
+
+    public function inkoop()
+    {
+        $products = Product::all();
+        return view('web-app/inkoop')
+            ->with(['products' => $products]);
     }
 
     public function sales()
