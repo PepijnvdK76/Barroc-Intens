@@ -1,5 +1,5 @@
 <header class="header">
-    <div class="navbar-area">
+    <div class="navbar-area fixed-top">
         <div class="container">
             <div class="row align-items-center">
                     <nav class="navbar navbar-expand-lg">
@@ -20,9 +20,9 @@
                                 </li>
                             </ul>
                         </div>
-                        <a href="{{ route('dashboard') }}">
+                        <a href="{{ route('contact') }}">
                             <div class="contactBtn p-4">
-                                Contact
+                                <p>Contact</p>
                             </div>
                         </a>
                     </nav>
