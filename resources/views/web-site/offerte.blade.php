@@ -1,4 +1,4 @@
-@extends('layouts.site')
+@extends('layouts.app')
 
 @section('content')
 
@@ -6,7 +6,7 @@
     @if(Session::has('alert'))
         <p class="alert {{ Session::get('alert') }}">{{ Session::get('alert') }}</p>
     @endif
-    <div class="container" style="max-width: 1000px; padding-top: 100px;">
+    <div class="container" style="max-width: 1000px;">
         <div class="shadow p-3 mb-5 bg-white rounded" style="background-color: white; margin-top: 50px; border-radius: 10px;  ">
 
             <form class="row g-3"  method="post" action="{{route('company.store')}}">
