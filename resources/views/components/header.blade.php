@@ -20,7 +20,10 @@
                                 </li>
                             </ul>
                         </div>
-                        <a href="{{ route('contact') }}">
+                        <a class="pr-4" href="{{ route('dashboard') }}">
+                            Dashboard
+                        </a>
+                        <a href="{{ route('offerte') }}">
                             <div class="contactBtn p-4">
                                 <p>Contact</p>
                             </div>

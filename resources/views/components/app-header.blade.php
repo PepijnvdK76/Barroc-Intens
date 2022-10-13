@@ -12,17 +12,11 @@
                                     </a>
                                 </div>
                             </li>
-                            <li class="nav-item">
-                                <a class="page-scroll" href="{{ route('bonen') }}">Bonen</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="page-scroll" href="#section3">Aparaten</a>
-                            </li>
                         </ul>
                     </div>
                     <a href="{{ route('dashboard') }}">
                         <div class="contactBtn p-4">
-                            Contact
+                            Dashboard
                         </div>
                     </a>
                 </nav>

@@ -38,6 +38,10 @@ class PagesController extends Controller
     {
         return view('web-app/sales');
     }
+    public function dashboard()
+    {
+        return view('web-app/dashboard');
+    }
 
 
     //web-site

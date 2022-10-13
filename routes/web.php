@@ -42,10 +42,11 @@ Route::get('/machines', [PagesController::class, 'machines'])
 Route::get('/contact', [PagesController::class, 'contact'])
     ->name('contact');
 
-Route::get('/offerte', [PagesController::class, 'offerte']);
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
+Route::get('/offerte', [PagesController::class, 'offerte'])->name('offerte');
+
+Route::get('/dashboard', [PagesController::class, 'dashboard'])
+->name('dashboard');
+
 
 
 
@@ -55,7 +56,8 @@ Route::resource('finance', FinanceController::class);
 Route::get('/finance', [PagesController::class, 'finance'])->name('finance.index');
 
 Route::resource('sales', NotesController::class);
-Route::get('/inkoop', [PagesController::class, 'inkoop']);
+Route::get('/inkoop', [PagesController::class, 'inkoop'])->name('inkoop');
+
 Route::resource('inkoop', ProductsController::class);
 
 Route::resource('company', CompaniesController::class);

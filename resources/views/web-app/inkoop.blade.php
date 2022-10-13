@@ -1,3 +1,6 @@
+@extends('layouts.app')
+
+@section('content')
 <h1>Inkoop</h1>
 
 <ul>
@@ -29,3 +32,4 @@
     @endforeach
         <a class="btn btn-warning" href="{{route('inkoop.create')}}">Product aanmaken</a>
 </ul>
+@endsection
