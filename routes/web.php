@@ -31,6 +31,8 @@ Route::get('/', function () {
 
 Route::get('/index', [PagesController::class, 'index'])
     ->name('index');
+Route::get('/maintenance', [PagesController::class, 'maintenance'])
+    ->name('maintenance');
 
 Route::get('/bonen', [PagesController::class, 'bonen'])
     ->name('bonen');

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Company;
+use App\Models\Maintenance_appointments;
 use App\Models\Product;
 use Illuminate\Http\Request;
 
@@ -15,6 +16,14 @@ class PagesController extends Controller
         $companies = Company::all();
         return view('web-app/finance')
             ->with(['companies' => $companies]);
+    }
+
+
+    public function maintenance()
+    {
+        $maintenances = Maintenance_appointments::all();
+        return view('web-app/maintenance')
+            ->with(['Maintenance' => $maintenances,]);
     }
 
 
