@@ -16,6 +16,21 @@ class ProductSeeder extends Seeder
      */
     public function run()
     {
+        $category = new Product_categorie();
+        $category->name = "bonen";
+        $category->is_employee_only = 0;
+        $category->save();
+
+        $category = new Product_categorie();
+        $category->name = "apparatem";
+        $category->is_employee_only = 0;
+        $category->save();
+
+        $category = new Product_categorie();
+        $category->name = "materialen";
+        $category->is_employee_only = 1;
+        $category->save();
+
         $product = new Product();
         $product->name = "Barroc Intens Italian Light";
         $product->description = "Lease contract: 499,- excl btw per maand installatiekosten vast: 289,- excl btw.";
@@ -56,20 +71,7 @@ class ProductSeeder extends Seeder
         $product->products_category_id = 2;
         $product->save();
 
-        $category = new Product_categorie();
-        $category->name = "bonen";
-        $category->is_employee_only = 0;
-        $category->save();
 
-        $category = new Product_categorie();
-        $category->name = "apparatem";
-        $category->is_employee_only = 0;
-        $category->save();
-
-        $category = new Product_categorie();
-        $category->name = "materialen";
-        $category->is_employee_only = 1;
-        $category->save();
 
     }
 }
