@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Company;
+use App\Models\Maintenance_appointments;
 use Illuminate\Http\Request;
 
 class Maintenance_appointmentsController extends Controller
@@ -13,7 +15,9 @@ class Maintenance_appointmentsController extends Controller
      */
     public function index()
     {
-        //
+        $appointments = Maintenance_appointments::all();
+        return view('web-app/maintenance')
+            ->with(['appointments' => $appointments]);
     }
 
     /**
@@ -34,7 +38,7 @@ class Maintenance_appointmentsController extends Controller
      */
     public function store(Request $request)
     {
-        //
+
     }
 
     /**
@@ -45,7 +49,9 @@ class Maintenance_appointmentsController extends Controller
      */
     public function show($id)
     {
-        //
+        $appointment = Maintenance_appointments::findorfail($id);
+               $company = Company::findorfail($id);
+                return view('web-app/maintenance.show', ['company' => $company, 'appointment' => $appointment]);
     }
 
     /**
