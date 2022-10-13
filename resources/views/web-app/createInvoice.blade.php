@@ -1,11 +1,11 @@
-@extends('layouts.site')
+@extends('layouts.app')
 
 @section('content')
     <?php $datetoday = date("Y-m-d"); ?>
         <form method="post" action="{{route('finance.store')}}">
             @csrf
                 <div class="form-group">
-                    <label class="text-white" for="date ">Datum van factuur </label>
+                    <label class="text-white mt-3" for="date ">Datum van factuur </label>
                     <input style="border-radius: 0.375rem" value="<?php echo $datetoday; ?>" type="date" class="form-control" id="date" name="date">
                 </div>
                 <div class="form-group">
@@ -18,6 +18,6 @@
                         <option value="5">bedrijf 5</option>
                     </select>
                 </div>
-            <button type="submit" class="btn bg-primary btn-primary mt-3">Submit</button>
+            <button type="submit" class="btn bg-primary btn-primary mt-3" style="margin-bottom: 28%">Submit</button>
         </form>
 @endsection

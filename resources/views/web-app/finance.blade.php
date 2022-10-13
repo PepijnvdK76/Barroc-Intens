@@ -1,7 +1,11 @@
+@extends('layouts.app')
 
+@section('content')
 
-    <h1>finance</h1>
-    <table class="table table-striped">
+{{--    <a href=""  class="btn btn-primary btn-lg btn-block">Zie klanten lijst</a><br>--}}
+    <a href="{{route('finance.create')}}"  class="btn btn-primary btn-lg btn-block mt-3 mb-3">Maak factuur aan</a>
+
+    <table class="table table-striped bg-white">
         <thead>
         <tr>
             <th scope="col">#</th>
@@ -31,6 +35,7 @@
         @endforeach
         </tbody>
     </table>
+@endsection
 
 
 
