@@ -2,7 +2,7 @@
 @extends('layouts.site')
 
 @section('content')
-    <div class="container">
+    <div class="container" style="padding-top: 100px">
         <a href="" class="klant_aanmaken"><img src="{{ Vite::asset('public/content/img/notes.png') }}" width=4%" alt="" style="background-color: lightgray; border-radius: 10px" class="p-2">Klant gegevens</a>
     </div>
     <div class="container">
