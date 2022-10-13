@@ -6,7 +6,7 @@
     <?php $datetoday = date("Y-m-d"); ?>
     <form action="{{route('sales.store')}}" method="post">
         @csrf
-        <div class="mb-3">
+        <div class="mb-3" style="padding-top: 100px">
             <label for="date" class="form-label">Datum</label>
             <input type="date" class="form-control" value="<?php echo $datetoday ?>" id="date" name="date" style="border-radius: 6px">
         </div>
