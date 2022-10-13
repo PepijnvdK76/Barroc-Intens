@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Company;
+use App\Models\Custom_invoice;
 use Illuminate\Http\Request;
 
 class FinanceController extends Controller
@@ -14,9 +15,7 @@ class FinanceController extends Controller
      */
     public function index()
     {
-        $companies = Company::all();
-        return view('/finance')
-            ->with(['companies' => $companies]);
+        return view('web-app.finance');
     }
 
     /**
@@ -26,7 +25,7 @@ class FinanceController extends Controller
      */
     public function create()
     {
-        //
+        return view('web-app.createInvoice');
     }
 
     /**
@@ -37,7 +36,8 @@ class FinanceController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $invoice = Custom_invoice::create($request->except('_token') );
+        return redirect(route('finance.index'))->with('message', "Factuur succesvol aangemaakt!");
     }
 
     /**

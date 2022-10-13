@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Item;
+use App\Models\Note;
 use Illuminate\Http\Request;
 
 class NotesController extends Controller
@@ -13,7 +15,8 @@ class NotesController extends Controller
      */
     public function index()
     {
-        //
+        return view('web-app/sales');
+
     }
 
     /**
@@ -23,7 +26,7 @@ class NotesController extends Controller
      */
     public function create()
     {
-        //
+        return view('web-app/sales.create');
     }
 
     /**
@@ -34,7 +37,9 @@ class NotesController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $note = Note::create($request->except('_token'));
+        return redirect(route('sales.index'))
+            ->with("message', 'Notities zijn succesvol opgeslagen");
     }
 
     /**
