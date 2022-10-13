@@ -31,12 +31,12 @@
 
                 <div class="col-4">
                     <label for="land" class="form-label">Land</label>
-                    <input type="text" class="form-control" id="inputLand" name="country_code">
+                    <input type="text" max="3" class="form-control" id="inputLand" name="country_code">
                 </div>
 
                 <div class="col-md-4">
                     <label for="inputCity" class="form-label">Stad</label>
-                    <input type="text" class="form-control" id="inputCity" name="city">
+                    <input type="text" maxlength="3" class="form-control" id="inputCity" name="city">
                 </div>
 
 
