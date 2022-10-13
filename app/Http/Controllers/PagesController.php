@@ -16,6 +16,13 @@ class PagesController extends Controller
             ->with(['companies' => $companies]);
     }
 
+    public function inkoop()
+    {
+        $products = Product::all();
+        return view('web-app/inkoop')
+            ->with(['products' => $products]);
+    }
+
     public function sales()
     {
         return view('web-app/sales');
