@@ -25,7 +25,9 @@ class FinanceController extends Controller
      */
     public function create()
     {
-        return view('web-app.createInvoice');
+        $companies = Company::all();
+        return view('web-app.createInvoice')
+            ->with(['companies' => $companies]);
     }
 
     /**
