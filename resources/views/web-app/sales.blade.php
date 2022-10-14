@@ -1,4 +1,4 @@
-<body style="background-color: white">
+<body>
 @extends('layouts.app')
 
 @section('content')
