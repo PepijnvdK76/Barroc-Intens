@@ -14,6 +14,7 @@
                 <th scope="col" class="text-white">Huisnummer</th>
                 <th scope="col" class="text-white">Stad</th>
                 <th scope="col" class="text-white">Land</th>
+                <th scope="col" class="text-white">laatst geupdate</th>
             </tr>
             </thead>
             <tbody>
@@ -24,6 +25,7 @@
                 <td><label class="text-white" for="">{{$company->house_number}}</label></td>
                 <td><label class="text-white" for="">{{$company->city}}</label></td>
                 <td><label class="text-white" for="">{{$company->country_code}}</label></td>
+                <td><label class="text-white" for="">{{$company->updated_at}}</label></td>
             </tr>
             </tbody>
         </table>

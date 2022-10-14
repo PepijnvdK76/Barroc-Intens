@@ -1,6 +1,15 @@
-<h1>Producten</h1>
-<h2>voeg een product toe</h2>
-<form method="POST" action="{{route('inkoop.store')}}">
+@extends('layouts.app')
+
+@section('content')
+
+
+<div class="container-sm bg-white">
+
+    <div class="container-sm d-flex" style="max-width: 1000px;">
+        <div class="shadow p-3 mb-5  rounded" style="background-color: #212121; margin-top: 50px; border-radius: 10px; color: white; margin-left: 300px;  ">
+            <h1>Producten</h1>
+        <h2>voeg een product toe</h2>
+    <form method="POST" action="{{route('inkoop.store')}}">
     @csrf
     <div class="form-group">
         <label for="">name</label>
@@ -25,5 +34,15 @@
         <option value="2">apparaten</option>
         <option value="3">materiaal</option>
     </select>
-    <input type="submit" value="save item" class="btn btn-primary">
+        <div>
+             <input type="submit" value="save item" class=" btn btn-primary">
+        </div>
 </form>
+        </div>
+    </div>
+</div>
+
+
+<div style="padding: 12vh;"></div>
+</div>
+@endsection
