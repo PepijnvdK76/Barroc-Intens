@@ -8,6 +8,7 @@ use \App\Models\Company;
 use App\Http\Controllers\CompaniesController;
 use \App\Http\Controllers\FinanceController;
 use \App\Http\Controllers\NotesController;
+use \App\Http\Controllers\Maintenance_appointmentsController;
 
 
 
@@ -31,8 +32,7 @@ Route::get('/', function () {
 
 Route::get('/index', [PagesController::class, 'index'])
     ->name('index');
-Route::get('/maintenance', [PagesController::class, 'maintenance'])
-    ->name('maintenance');
+Route::get('/maintenance', [PagesController::class, 'maintenance']);
 
 Route::get('/bonen', [PagesController::class, 'bonen'])
     ->name('bonen');
@@ -61,6 +61,8 @@ Route::get('/inkoop', [PagesController::class, 'inkoop'])->name('inkoop');
 Route::resource('inkoop', ProductsController::class);
 
 Route::resource('company', CompaniesController::class);
+
+Route::resource('maintenance', Maintenance_appointmentsController::class);
 
 
 require __DIR__.'/auth.php';

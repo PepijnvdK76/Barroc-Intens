@@ -16,20 +16,6 @@ class ProductSeeder extends Seeder
      */
     public function run()
     {
-        $category = new Product_categorie();
-        $category->name = "bonen";
-        $category->is_employee_only = 0;
-        $category->save();
-
-        $category = new Product_categorie();
-        $category->name = "apparatem";
-        $category->is_employee_only = 0;
-        $category->save();
-
-        $category = new Product_categorie();
-        $category->name = "materialen";
-        $category->is_employee_only = 1;
-        $category->save();
 
         $product = new Product();
         $product->name = "Barroc Intens Italian Light";

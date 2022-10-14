@@ -14,7 +14,7 @@
                      <div class="p-3 border bg-light rounded-5"><a href="{{ route('finance.index') }}">Finance</a></div>
                 </div>
                 <div class="col-6">
-                    <div class="p-3 border bg-light rounded-5"><a href="{{ route('finance.index') }}">Maintenance</a></div>
+                    <div class="p-3 border bg-light rounded-5"><a href="{{ route('maintenance.index') }}">Maintenance</a></div>
                 </div>
                 <div class="col-6">
                     <div class="p-3 border bg-light rounded-5"><a href="{{ route('sales.index') }}">Sales</a></div>

@@ -21,9 +21,9 @@ class PagesController extends Controller
 
     public function maintenance()
     {
-        $maintenances = Maintenance_appointments::all();
+        $appointments = Maintenance_appointments::all();
         return view('web-app/maintenance')
-            ->with(['Maintenance' => $maintenances,]);
+            ->with(['appointments' => $appointments]);
     }
 
 
