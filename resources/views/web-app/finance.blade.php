@@ -16,6 +16,7 @@
             <th scope="col">stad</th>
             <th scope="col">landnummer</th>
             <th scope="col">bkr check</th>
+            <th scope="col">laast geupdate</th>
         </tr>
         </thead>
 
@@ -30,6 +31,7 @@
                 <td>{{$company->city}}</td>
                 <td>{{$company->country_code}}</td>
                 <td>{{$company->bkr_checked_at}}</td>
+                <td>{{$company->updated_at}}</td>
                 <td><a class="btn btn-warning" href="{{route('finance.edit' , $company)}}">BKR aanpassen</a></td>
             </tr>
         @endforeach
