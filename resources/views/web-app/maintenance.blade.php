@@ -5,18 +5,18 @@
 <h1>maintenance</h1>
     <tbody>
     @foreach($appointments as $appointment)
-        <table class="table">
+        <table class="table text-white">
             <thead>
             <tr>
-                <th scope="col" class="text-white">Id</th>
-                <th scope="col" class="text-white">Datum</th>
-                <th scope="col" class="text-white">Wijzig</th>
+                <th scope="col">Id</th>
+                <th scope="col">Datum</th>
+                <th scope="col">Wijzig</th>
             </tr>
             </thead>
             <tbody>
             <tr>
-                <td><label class="text-white" for="">{{$appointment->company_id}}</label></td>
-                <td><label class="text-white" for="">{{$appointment->date}}</label></td>
+                <td><label for="">{{$appointment->company_id}}</label></td>
+                <td><label for="">{{$appointment->date}}</label></td>
                 <td><a href="{{route('maintenance.show', $appointment->company_id)}}" class="btn btn-warning">Overzicht</a></td>
             </tr>
             </tbody>
