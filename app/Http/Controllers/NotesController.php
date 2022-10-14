@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Company;
 use App\Models\Item;
 use App\Models\Note;
 use Illuminate\Http\Request;
@@ -26,7 +27,9 @@ class NotesController extends Controller
      */
     public function create()
     {
-        return view('web-app/sales.create');
+        $companies = Company::all();
+        return view('web-app/sales.create')
+            ->with(['companies' => $companies]);
     }
 
     /**
