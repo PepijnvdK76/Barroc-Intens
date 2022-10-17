@@ -18,6 +18,13 @@ return new class extends Migration
                 ->references('id')->on('users');
         });
 
+        Schema::table('maintenance_appointment_review', function (Blueprint $table) {
+            $table->foreign('appointment_id')
+                ->references('id')->on('maintenance_appointments');
+            $table->foreign('used_id')
+                ->references('id')->on('custom_invoices_products');
+
+        });
 
 
         Schema::table('notes', function (Blueprint $table) {

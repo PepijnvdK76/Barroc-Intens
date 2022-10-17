@@ -15,6 +15,7 @@ class CategorieSeeder extends Seeder
      */
     public function run()
     {
+
         $category = new Product_categorie();
         $category->name = "bonen";
         $category->is_employee_only = 0;
