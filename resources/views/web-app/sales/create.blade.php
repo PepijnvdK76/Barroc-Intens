@@ -1,5 +1,5 @@
 <body style="background-color: white">
-@extends('layouts.site')
+@extends('layouts.app')
 
 
 @section('content')

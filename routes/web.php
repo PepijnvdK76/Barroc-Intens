@@ -45,7 +45,8 @@ Route::get('/contact', [PagesController::class, 'contact'])
 Route::get('/offerte', [PagesController::class, 'offerte'])->name('offerte');
 
 Route::get('/dashboard', [PagesController::class, 'dashboard'])
-->name('dashboard');
+    ->middleware(['auth'])
+    ->name('dashboard');
 
 
 

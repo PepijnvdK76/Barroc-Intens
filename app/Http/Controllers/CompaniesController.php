@@ -14,7 +14,10 @@ class CompaniesController extends Controller
      */
     public function index()
     {
-        //
+        $companies = Company::all();
+        return view('web-app.company.index', [
+            'companies'=> $companies
+        ]);
     }
 
     /**
@@ -67,7 +70,10 @@ class CompaniesController extends Controller
      */
     public function show($id)
     {
-        //
+        $company = Company::FindOrFail($id);
+        return view('web-app.company.show',[
+            'company'=> $company
+        ]);
     }
 
     /**

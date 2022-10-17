@@ -18,6 +18,12 @@ class PagesController extends Controller
             ->with(['companies' => $companies]);
     }
 
+    public function company(){
+        $companies = Company::all();
+        return view('web-app/company')
+            ->with(['companies' => $companies]);
+    }
+
 
     public function maintenance()
     {
@@ -40,9 +46,9 @@ class PagesController extends Controller
     }
     public function dashboard()
     {
-        return view('web-app/dashboard');
+        return view('web-app/dashboard')
+            ;
     }
-
 
     //web-site
 

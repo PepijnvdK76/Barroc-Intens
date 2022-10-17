@@ -2,7 +2,7 @@
 
 @section('content')
     <div class="container-sm bg-white">
-    <div style="padding: 33vh;">
+    <div style="padding: 29vh;">
 
 
         <div class="container text-center">
@@ -18,6 +18,11 @@
                 </div>
                 <div class="col-6">
                     <div class="p-3 border bg-light rounded-5"><a href="{{ route('sales.index') }}">Sales</a></div>
+                </div>
+            </div>
+            <div class="row g-2 d-flex justify-content-center">
+                <div class="col-6 p-2">
+                    <div class="p-3 border bg-light rounded-5"><a href="{{ route('company.index') }}">Klanten lijst</a></div>
                 </div>
             </div>
         </div>
