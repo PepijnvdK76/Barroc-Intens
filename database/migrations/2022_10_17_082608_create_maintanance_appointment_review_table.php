@@ -13,14 +13,11 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('maintenance_appointments', function (Blueprint $table) {
+        Schema::create('maintenance_appointment_review', function (Blueprint $table) {
             $table->id();
-            $table->text('title');
-            $table->unsignedBigInteger('company_id')->nullable();
-            $table->longText('remark');
-            $table->dateTime('date');
-            $table->Time('date_started');
-            $table->Time('date_finished');
+            $table->unsignedBigInteger('appointment_id')->nullable();
+            $table->longText('problem');
+            $table->unsignedBigInteger('used_id')->nullable();
             $table->timestamps();
         });
     }
@@ -32,6 +29,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('maintenance_appointments');
+        Schema::dropIfExists('maintanance_appointment_review');
     }
 };
