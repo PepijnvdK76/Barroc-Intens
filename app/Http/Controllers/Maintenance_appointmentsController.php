@@ -27,7 +27,11 @@ class Maintenance_appointmentsController extends Controller
      */
     public function create()
     {
-        //
+        $companies = Company::all();
+        $appointments = Maintenance_appointments::all();
+        return view('web-app/maintenance.create')
+            ->with(['appointments' => $appointments])
+            ->with(['companies' => $companies]);
     }
 
     /**
@@ -38,7 +42,8 @@ class Maintenance_appointmentsController extends Controller
      */
     public function store(Request $request)
     {
-
+        $maintenance_appointment = maintenance_appointments::create($request->except('_token'));
+        return redirect(route('maintenance.index'));
     }
 
     /**

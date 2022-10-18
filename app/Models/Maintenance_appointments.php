@@ -8,6 +8,8 @@ use Illuminate\Database\Eloquent\Model;
 class Maintenance_appointments extends Model
 {
     use HasFactory;
+    protected $table = 'maintenance_appointments';
+    protected $guarded = [];
 
     protected $casts = [
         'date' => 'datetime',

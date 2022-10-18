@@ -19,8 +19,8 @@ return new class extends Migration
             $table->unsignedBigInteger('company_id')->nullable();
             $table->longText('remark');
             $table->dateTime('date');
-            $table->Time('date_started');
-            $table->Time('date_finished');
+            $table->dateTime('date_started');
+            $table->dateTime('date_finished');
             $table->timestamps();
         });
     }
