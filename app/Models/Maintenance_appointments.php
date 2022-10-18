@@ -9,7 +9,13 @@ class Maintenance_appointments extends Model
 {
     use HasFactory;
 
+    protected $casts = [
+        'date' => 'datetime',
+    ];
+
     public function Maintenance(){
         return $this->belongsTo(Company::class, 'company_id');
     }
+
+
 }
