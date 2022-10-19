@@ -9,15 +9,15 @@ return new class extends Migration
     /**
      * Run the migrations.
      *
-     * @return void
+     * @return voids
      */
     public function up()
     {
-        Schema::create('maintenance_appointment_review', function (Blueprint $table) {
+        Schema::create('maintenance_appointment_reviews', function (Blueprint $table) {
             $table->id();
+            $table->text('title');
             $table->unsignedBigInteger('appointment_id')->nullable();
             $table->longText('problem');
-            $table->unsignedBigInteger('used_id')->nullable();
             $table->timestamps();
         });
     }

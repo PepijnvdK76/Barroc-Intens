@@ -3,12 +3,11 @@
 namespace App\Http\Controllers;
 
 use App\Models\Maintenance_appointment_review;
-use App\Models\Maintenance_appointments;
 use App\Models\Product;
-use App\Models\Review;
+use App\Models\Review_product;
 use Illuminate\Http\Request;
 
-class Appointment_reviewContoller extends Controller
+class OrderController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -27,9 +26,10 @@ class Appointment_reviewContoller extends Controller
      */
     public function create()
     {
-        $appointments = Maintenance_appointments::all();
-        return view('web-app/review/create')
-            ->with(['appointments' => $appointments]);
+        $reviews = Maintenance_appointment_review::all();
+        $products = Product::all();
+        return view("web-app/order/create")
+            ->with(['reviews' => $reviews,'products' => $products]);
     }
 
     /**
@@ -40,18 +40,12 @@ class Appointment_reviewContoller extends Controller
      */
     public function store(Request $request)
     {
-        $this->validate($request, [
-            'title' => 'required',
-            'appointment_id' => 'required',
-            'problem' => 'required',
-
-        ]);
-        $review = new Maintenance_appointment_review();
-        $review->title = $request->title;
-        $review->appointment_id = $request->appointment_id;
-        $review->problem = $request->problem;
-        $review->save();
-        return redirect('/order/create');
+        $used = new Review_product();
+       $used->review_id = $request->review_id;
+       $used->product_id = $request->product_id;
+        $used->amount = $request->amount;
+        $used->save();
+        return back();
     }
 
     /**

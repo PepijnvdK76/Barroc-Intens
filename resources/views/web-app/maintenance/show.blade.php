@@ -41,5 +41,10 @@
     </tbody>
 </table>
 @endsection
+
+@if($appointment->done == 0)
+<a class="btn btn-warning" href="{{route('review.edit', $appointment)}}">review aanmaken</a>
+
+@endif
 </body>
 
