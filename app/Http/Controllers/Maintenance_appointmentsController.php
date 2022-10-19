@@ -55,8 +55,8 @@ class Maintenance_appointmentsController extends Controller
     public function show($id)
     {
         $appointment = Maintenance_appointments::findorfail($id);
-               $company = Company::findorfail($id);
-                return view('web-app/maintenance.show', ['company' => $company, 'appointment' => $appointment]);
+        $company = Company::findorfail($id);
+        return view('web-app/maintenance.show', ['company' => $company, 'appointment' => $appointment]);
     }
 
     /**
