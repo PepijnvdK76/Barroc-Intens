@@ -21,8 +21,6 @@ return new class extends Migration
             $table->dateTime('date');
             $table->Time('date_started')->nullable();
             $table->Time('date_finished')->nullable();
-            $table->Time('date_started');
-            $table->Time('date_finished');
             $table->boolean('done')->default('0');
             $table->timestamps();
         });
