@@ -2,11 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Company;
 use App\Models\Maintenance_appointments;
 use Illuminate\Http\Request;
 
-class Maintenance_appointmentsController extends Controller
+class FilterController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,9 +14,7 @@ class Maintenance_appointmentsController extends Controller
      */
     public function index()
     {
-        $appointments = Maintenance_appointments::all();
-        return view('web-app/maintenance')
-            ->with(['appointments' => $appointments]);
+        //
     }
 
     /**
@@ -27,11 +24,7 @@ class Maintenance_appointmentsController extends Controller
      */
     public function create()
     {
-        $companies = Company::all();
-        $appointments = Maintenance_appointments::all();
-        return view('web-app/maintenance/create')
-            ->with(['appointments' => $appointments])
-            ->with(['companies' => $companies]);
+        //
     }
 
     /**
@@ -42,8 +35,29 @@ class Maintenance_appointmentsController extends Controller
      */
     public function store(Request $request)
     {
-        $maintenance_appointment = maintenance_appointments::create($request->except('_token'));
-        return redirect(route('maintenance.index'));
+        if ($request->tijd_id == 1)
+        {
+            $appointments = Maintenance_appointments::all();
+            return view('web-app/maintenance')
+                ->with(['appointments' => $appointments]);
+        }
+        elseif ($request->tijd_id == 2)
+        {
+            $date = now()->subDays(7);
+            $appointments = Maintenance_appointments::whereDate('date', '>=', $date)->get();
+            return view('web-app/maintenance')
+                ->with(['appointments' => $appointments]);
+        }
+        elseif ($request->tijd_id == 3)
+        {
+            $appointments = Maintenance_appointments::whereDate('date', '=', today())->get();
+            return view('web-app/maintenance')
+                ->with(['appointments' => $appointments]);
+        }
+        else
+        {
+            return view('maintenance.index');
+        }
     }
 
     /**
@@ -54,9 +68,7 @@ class Maintenance_appointmentsController extends Controller
      */
     public function show($id)
     {
-        $appointment = Maintenance_appointments::findorfail($id);
-        $company = Company::findorfail($id);
-        return view('web-app/maintenance.show', ['company' => $company, 'appointment' => $appointment]);
+        //
     }
 
     /**
@@ -92,6 +104,4 @@ class Maintenance_appointmentsController extends Controller
     {
         //
     }
-
-
 }

@@ -1,8 +1,9 @@
+
 @extends('layouts.app')
 @section('content')
 <h1 class="text-dark">maintenance</h1>
     <a href="{{route('maintenance.create')}}" class="btn btn-primary">Afspraak aanmaken</a>
-<form action="{{route('maintenance.filter')}}" method="POST">
+<form action="{{route('filter.store')}}" method="POST">
     @csrf
 <select class="form-control" id="tijd_id" name="tijd_id">
         <option value="1">alles</option>
