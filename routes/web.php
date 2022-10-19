@@ -66,6 +66,7 @@ Route::resource('inkoop', ProductsController::class);
 Route::resource('company', CompaniesController::class);
 
 Route::resource('maintenance', Maintenance_appointmentsController::class);
+Route::post('maintenance', [Maintenance_appointmentsController::class, 'filter'])->name('maintenance.filter');
 
 Route::resource('review', Appointment_reviewContoller::class);
 Route::resource('order', OrderController::class);
