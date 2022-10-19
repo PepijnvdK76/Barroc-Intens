@@ -10,7 +10,7 @@
     <option value="2">1 week</option>
     <option value="3">1 dag</option>
 </select>
-    <input type="submit" value="filter opslaan" class=" btn btn-primary">
+    <input type="submit" value="filter opslaan" class="btn btn-primary bg-primary">
 </form>
     <table class="table text-white">
         <thead>

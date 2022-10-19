@@ -29,10 +29,10 @@
         <input type="number" step="any" name="price" class="form-control">
     </div>
 
-    <select name="products_category_id">
-        <option value="1">bonen</option>
-        <option value="2">apparaten</option>
-        <option value="3">materiaal</option>
+    <select name="products_category_id" style="color: black">
+        <option value="1" style="color: black">bonen</option>
+        <option value="2" style="color: black">apparaten</option>
+        <option value="3" style="color: black">materiaal</option>
     </select>
         <div>
              <input type="submit" value="save item" class=" btn btn-primary">
