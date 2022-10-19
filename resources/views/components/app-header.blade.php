@@ -1,4 +1,4 @@
-<header class="header">
+<header>
     <div class="d-flex align-items-center navbar-area">
         <div class="p-2">
             <a href="{{ route('index') }}">
@@ -7,18 +7,14 @@
         </div>
 
         <div class="ms-auto p-2">
-            <div class="nav-item">
-                <a class="pr-4 page-scroll" href="{{ route('dashboard') }}">
-                    Dashboard
-                </a>
-            </div>
         </div>
         <div>
-            <a href="{{ route('offerte') }}">
+            <a href="{{ route('dashboard') }}">
                 <div class="contactBtn">
-                    <p>Contact</p>
+                    <p>Dashboard</p>
                 </div>
             </a>
         </div>
     </div>
 </header>
+

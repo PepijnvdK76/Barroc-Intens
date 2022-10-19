@@ -1,8 +1,11 @@
 @extends('layouts.app')
 
 @section('content')
+    @if (auth()->user()->isAdmin())
+        <h1>Testje</h1>
+    @endif
     <div class="container-sm bg-white">
-        <div class="text-gray-200">
+        <div class="bg-gray-800">
             <h1>Uw Gegevens</h1>
             <h1>Naam: {{$company->name}}</h1>
             <h1>Telefoon: {{$company->phone}}</h1>

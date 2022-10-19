@@ -15,7 +15,7 @@
         <div class="p-2">
             <ul id="nav" class="navbar-nav">
                 <li class="nav-item">
-                    <a class="page-scroll" href="#section3">Aparaten</a>
+                    <a class="page-scroll" href="{{ route('machines') }}">Aparaten</a>
                 </li>
             </ul>
         </div>

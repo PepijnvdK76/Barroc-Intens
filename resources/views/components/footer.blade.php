@@ -1,5 +1,5 @@
-<div class="navbar sticky-bottom bg-white ">
-    <div class="container-fluid justify-content-center">
-        <p class="text-black    ">@Barroc Intens</p>
+<footer class="footer mt-auto py-3 bg-light">
+    <div class="container text-center">
+        <span class="text-muted">@Barroc intens</span>
     </div>
-</div>
+</footer>

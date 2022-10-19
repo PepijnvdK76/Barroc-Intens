@@ -3,26 +3,24 @@
 @section('content')
     <div class="container-sm bg-white">
     <div style="padding: 29vh;">
-
-
         <div class="container text-center">
             <div class="row g-2">
                 <div class="col-6">
-                    <div class="p-3  border bg-light rounded-5"><a href="{{ route('inkoop.index') }}">Inkoop</a></div>
+                    <a href="{{ route('inkoop.index') }}">  <div class="contactBtn rounded-5">Inkoop</div></a>
                 </div>
                 <div class="col-6">
-                     <div class="p-3 border bg-light rounded-5"><a href="{{ route('finance.index') }}">Finance</a></div>
+                    <a href="{{ route('finance.index') }}">    <div class="contactBtn rounded-5">Finance</div></a>
                 </div>
                 <div class="col-6">
-                    <div class="p-3 border bg-light rounded-5"><a href="{{ route('maintenance.index') }}">Maintenance</a></div>
+                    <a href="{{ route('maintenance.index') }}">   <div class="contactBtn rounded-5">Maintenance</div></a>
                 </div>
                 <div class="col-6">
-                    <div class="p-3 border bg-light rounded-5"><a href="{{ route('sales.index') }}">Sales</a></div>
+                    <a href="{{ route('sales.index') }}"><div class="contactBtn rounded-5">Sales</div></a>
                 </div>
             </div>
             <div class="row g-2 d-flex justify-content-center">
                 <div class="col-6 p-2">
-                    <div class="p-3 border bg-light rounded-5"><a href="{{ route('company.index') }}">Klanten lijst</a></div>
+                    <a href="{{ route('company.index') }}"> <div class="contactBtn rounded-5">Klanten lijst</div></a>
                 </div>
             </div>
         </div>

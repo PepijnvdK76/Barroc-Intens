@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="container-sm bg-white">
+
 
 
     @if(Session::has('alert'))

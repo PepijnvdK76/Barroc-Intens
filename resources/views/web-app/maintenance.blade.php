@@ -1,8 +1,8 @@
 @extends('layouts.app')
 
 @section('content')
-<h1>maintenance</h1>
-        <table class="table text-white">
+<h1 class="text-dark">maintenance</h1>
+        <table class="table text-dark">
             <thead>
             <tr>
                 <th scope="col">Id</th>
