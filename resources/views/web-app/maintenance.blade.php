@@ -1,5 +1,5 @@
-{{--@extends('layouts.app')--}}
-{{--@section('content')--}}
+@extends('layouts.app')
+@section('content')
     <h1>maintenance</h1>
     <a href="{{route('maintenance.create')}}" class="btn btn-primary">Afspraak aanmaken</a>
 <form action="{{route('maintenance.filter')}}" method="POST">
@@ -29,4 +29,4 @@
         </tbody>
         @endforeach
     </table>
-{{--@endsection--}}
+@endsection
