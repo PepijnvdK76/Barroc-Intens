@@ -51,14 +51,11 @@ class PagesController extends Controller
     }
 
     //web-site
-
     public function offerte()
     {
         return view('web-site/offerte');
 
     }
-
-
     public function index()
     {
         return view('web-site/index')  ;

@@ -1,8 +1,9 @@
 @extends('layouts.site')
+
     @section('content')
-        <img src="{{ Vite::asset('public/content/img/beansbackground.jpg') }}" class=" d-block h-45 " alt="...">
+        <img src="{{ Vite::asset('public/content/img/machinebackground.jpg') }}" class=" d-block h-45 " alt="...">
         <div class="bg-text">
-            <h1>Machines</h1>
+            <h1>Koffie Machines</h1>
             <p>Barroc Intens</p>
         </div>
         <div class="container-sm bg-white">

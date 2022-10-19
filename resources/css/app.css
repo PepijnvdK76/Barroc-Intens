@@ -12,12 +12,15 @@ h1{
     color:white;
 }
 img{
-    max-width: 100%;
     height: auto;
 }
-main > .container {
+/*.container img{
+    height: 90vh;
+    width: 100vw;
+}*/
+/*main > .container {
     padding: 60px 15px 0;
-}
+}*/
 
 /*Header*/
 .navbar-area {
