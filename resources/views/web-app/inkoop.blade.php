@@ -19,6 +19,7 @@
                 <th scope="col">naam</th>
                 <th scope="col">beschrijving</th>
                 <th scope="col">prijs</th>
+                <th></th>
             </tr>
             </thead>
             @foreach($products as $product)
@@ -33,7 +34,7 @@
                     <form method="POST" action="{{route('inkoop.destroy', $product)}}">
                         @csrf
                         @method('delete')
-                        <input class="btn btn-danger" type="submit" value="delete">
+                        <input class="btn btn-danger bg-danger" type="submit" value="delete">
                     </form>
                 </td>
             </tr>
