@@ -12,7 +12,7 @@
 </select>
     <input type="submit" value="filter opslaan" class="btn btn-primary bg-primary">
 </form>
-    <table class="table text-white">
+    <table class="table">
         <thead>
             <tr>
                 <th scope="col">Id</th>
