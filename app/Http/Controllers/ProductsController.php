@@ -46,6 +46,7 @@ class ProductsController extends Controller
      */
     public function store(Request $request)
     {
+        $search = $request['search'] ?? "";
         $this->validate($request, [
             'name' => 'required',
             'description' => 'required',
@@ -64,8 +65,10 @@ class ProductsController extends Controller
         $product->save();
 
         $products = Product::all();
+        $data = compact('products','search');
         return view('web-app/inkoop')
-            ->with(['products' => $products]);
+            ->with(['products' => $products])
+            ->with($data);
     }
 
     /**
