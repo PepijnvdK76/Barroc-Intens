@@ -5,37 +5,43 @@
 
 <div class="container-sm bg-white">
 
-    <div class="container-sm d-flex" style="max-width: 1000px;">
-        <div class="shadow p-3 mb-5  rounded" style="background-color: #212121; margin-top: 50px; border-radius: 10px; color: white; margin-left: 300px;  ">
-            <h1>Producten</h1>
-        <h2>voeg een product toe</h2>
+    <div class="container-sm d-flex" style="max-width: 5000px; color: white; align-items: center; padding-left: 250px">
+
+        <div class="shadow p-3 mb-5  rounded" style="background-color: #212121; margin-top: 50px; border-radius: 10px;  width: 800px;">
+            <div>
+                <h1>Producten</h1>
+            </div>
+
     <form method="POST" action="{{route('inkoop.store')}}">
     @csrf
-    <div class="form-group">
-        <label for="">name</label>
+    <div class="mb-3">
+        <label for="" style="border-radius: 10px;">name</label>
         <input type="text" name="name" class="form-control">
     </div>
     <div class="form-group">
         <label for="">description</label>
         <textarea name="description" class="form-control" id="" cols="" rows="10"> </textarea>
     </div>
-    <div class="form-group">
-        <label for="">image path</label>
+    <div class="form-group" >
+        <label for="" style="border-radius: 10px;">image path</label>
         <input type="text" name="image_path" class="form-control">
     </div>
 
-    <div class="form-group">
-        <label for="">price</label>
+    <div class="form-group" >
+        <label for="" style="border-radius: 10px;">price</label>
         <input type="number" step="any" name="price" class="form-control">
     </div>
 
-    <select name="products_category_id" style="color: black">
-        <option value="1" style="color: black">bonen</option>
-        <option value="2" style="color: black">apparaten</option>
-        <option value="3" style="color: black">materiaal</option>
+
+    <select name="products_category_id" style="color: black; border-radius: 10px;">
+        <option value="1">bonen</option>
+        <option value="2">apparaten</option>
+        <option value="3">materiaal</option>
+
     </select>
-        <div>
-             <input type="submit" value="save item" class=" btn btn-primary">
+
+        <div >
+            <button type="submit" value="Save Company" class="btn " style="background-color: #ffd700">Send</button>
         </div>
 </form>
         </div>

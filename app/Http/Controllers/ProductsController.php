@@ -12,11 +12,20 @@ class ProductsController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        $products = Product::all();
+        $search = $request['search'] ?? "";
+
+        if ($search != "") {
+            //where
+            $products = Product::where('name', 'LIKE', "%$search%")->orWhere('price', 'LIKE', "%$search%")->orWhere('description', 'LIKE', "%$search%")->get();
+        } else {
+            $products = Product::all();
+        }
+        $data = compact('products','search');
         return view('web-app/inkoop')
-            ->with(['products' => $products]);
+            ->with($data);
+
     }
 
     /**
