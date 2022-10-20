@@ -25,7 +25,7 @@
             <tr>
                 <td><label for="">{{$appointment->company_id}}</label></td>
                 <td><label for="">{{$appointment->date->format('H:i - d/m/Y')}}</label></td>
-                <td><a href="{{route('maintenance.show', $appointment->company_id)}}" class="btn btn-warning">Overzicht</a></td>
+                <td><a href="{{route('maintenance.show', $appointment->company_id ?? 0)}}" class="btn btn-warning">Overzicht</a></td>
             </tr>
         </tbody>
         @endforeach
