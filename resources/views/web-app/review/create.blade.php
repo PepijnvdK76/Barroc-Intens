@@ -1,12 +1,17 @@
+@extends('layouts.app')
+
+@section('content')
+
 <h1>review aanmaken</h1>
 
 <form method="POST" action="{{route('review.store')}}">
     @csrf
     <div class="form-group">
         <label for="">titel</label>
-        <input type="text" step="any" name="title" class="form-control">
+        <input type="text" step="any" name="title" class="form-control" style="border-radius: 8px">
     </div>
 
+    <label for="">selecteer afspraak</label>
     <select class="form-control" id="appointment_id" name="appointment_id">
         @foreach($appointments as $appointment)
             <option value="{{$appointment->id}}">{{$appointment->title}}</option>
@@ -18,6 +23,8 @@
         <textarea name="problem" class="form-control" id="" cols="" rows="10"> </textarea>
     </div>
     <div>
-        <input type="submit" value="save item" class=" btn btn-primary">
+        <input type="submit" value="save item" class=" btn btn-primary bg-primary">
     </div>
 </form>
+
+@endsection
