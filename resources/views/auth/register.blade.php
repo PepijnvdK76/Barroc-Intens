@@ -27,6 +27,17 @@
                 <x-input-error :messages="$errors->get('email')" class="mt-2" />
             </div>
 
+
+            <!-- Soort account -->
+            <div class="mt-4">
+                <x-input-label for="role_id" :value="__('Role_id')"></x-input-label>
+
+                <select id="role_id"  name="role_id"  class="form-select block mt-1 w-full" aria-label="Default select example" style="border-radius: 0.375rem">
+                    <option value="0">Klant</option>
+                    <option value="1">Medewerker</option>
+                </select>
+            </div>
+
             <!-- Password -->
             <div class="mt-4">
                 <x-input-label for="password" :value="__('Password')" />
