@@ -50,6 +50,10 @@ Route::get('/dashboard', [PagesController::class, 'dashboard'])
     ->middleware(['auth'])
     ->name('dashboard');
 
+Route::get('/klantDashboard', [PagesController::class, 'klantDashboard'])
+    ->middleware(['user-role'])
+    ->name('klantDashboard');
+
 
 
 

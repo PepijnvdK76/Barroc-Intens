@@ -1,5 +1,5 @@
-<footer class="footer mt-auto py-3 bg-light">
-    <div class="container text-center">
+<footer class="footer   bg-light" >
+    <div class="container text-center justify-content-center" style="height: 5vh">
         <span class="text-muted">@Barroc intens</span>
     </div>
 </footer>

@@ -1,25 +1,27 @@
 @extends('layouts.site')
-
+@section('img')
+    <img src="{{ Vite::asset('public/content/img/machinebackground.jpg') }}" class=" d-block h-45 " alt="...">
+    <div class="bg-text">
+        <h1>Koffie Machines</h1>
+        <p>Barroc Intens</p>
+    </div>
+@endsection
     @section('content')
-        <img src="{{ Vite::asset('public/content/img/machinebackground.jpg') }}" class=" d-block h-45 " alt="...">
-        <div class="bg-text">
-            <h1>Koffie Machines</h1>
-            <p>Barroc Intens</p>
-        </div>
-        <div class="container-sm bg-white">
-            @foreach($machines as $machine)
-                <div class="card customCard" style="width: 18rem;">
-                    <img src="{{ Vite::asset('public/content/img/coffeeBeans.jpg') }}" class="card-img-top" alt="...">
-                    <div class="card-body ">
-                        <h5 class="card-title text-white">{{$machine->name}}</h5>
-                        <p class="card-text text-white">{{$machine->description}}</p>
-                        <a href="{{ route('offerte') }}" class="btn btn-primary">Contact ons</a>
+            <div class="row py-4">
+                @foreach($machines as $machine)
+                    <div class="col d-flex justify-content-center">
+                        <div class="card" style="width: 18rem;">
+                            <img src="{{ Vite::asset('public/content/img/machinebackground.jpg') }}" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title">{{$machine->name}}</h5>
+                                <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
+                                <p class="card-text">{{$machine->description}}</p>
+                                <a href="{{ route('offerte') }}" class="btn mr-2"><i class="fas fa-link"></i> Contact ons</a>
+                            </div>
+                        </div>
                     </div>
-                </div>
-                <div style="padding: 50vh;"></div>
-        </div>
-
-        @endforeach
+                @endforeach
+            </div>
     @endsection
 
 

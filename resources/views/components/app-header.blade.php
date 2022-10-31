@@ -1,4 +1,4 @@
-<header>
+<header style="height: 10vh; z-index: 1">
     <div class="d-flex align-items-center navbar-area">
         <div class="p-2">
             <a href="{{ route('index') }}">

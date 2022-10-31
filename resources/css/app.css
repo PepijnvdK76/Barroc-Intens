@@ -14,13 +14,7 @@ h1{
 img{
     height: auto;
 }
-/*.container img{
-    height: 90vh;
-    width: 100vw;
-}*/
-/*main > .container {
-    padding: 60px 15px 0;
-}*/
+
 
 /*Header*/
 .navbar-area {
@@ -249,10 +243,21 @@ img{
     border-radius: 25px;
 
 }
-.customCard{
-    background:  #212121;
-    border-radius: 50px;
-}
-.roundedImg{
 
+
+
+
+
+.card {
+    background: #222;
+    border: 2px solid #ffd700;
+    color: rgba(250, 250, 250, 0.8);
+    margin-bottom: 2rem;
 }
+
+.card .btn {
+    background: #ffd700;
+    transition: all .4s ease;
+}
+
+

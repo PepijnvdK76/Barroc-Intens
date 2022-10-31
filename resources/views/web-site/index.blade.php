@@ -1,6 +1,6 @@
 @extends('layouts.site')
 
-@section('content')
+@section('img')
     <div class="sec">
         <video class="bg-vid" id="background-video" autoplay loop muted poster="{{ Vite::asset('public/content/img/coffee.mp4') }}0">
             <source src="{{ Vite::asset('public/content/img/coffee.mp4') }}" type="video/mp4">
