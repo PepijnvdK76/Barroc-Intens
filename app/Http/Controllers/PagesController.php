@@ -81,5 +81,9 @@ class PagesController extends Controller
             ->with(['machines' => $machines]);
     }
 
+    public function createCustomer()
+    {
+        return view('web-app/createCustomer');
+    }
 }
 
