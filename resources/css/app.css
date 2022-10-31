@@ -207,7 +207,7 @@ img{
     display: flex;
     justify-content: start;
     align-items: center;
-    margin-top: 2%;
+    padding-top: 2%;
     margin-left: 3%;
     font-size: larger;
     color: white;
