@@ -18,7 +18,7 @@ class ProductsController extends Controller
 
         if ($search != "") {
             //where
-            $products = Product::where('name', 'LIKE', "%$search%")->orWhere('price', 'LIKE', "%$search%")->orWhere('description', 'LIKE', "%$search%")->get();
+            $products = Product::where('name', 'LIKE', "%$search%")->orWhere('price', 'LIKE', "%$search%")->orWhere('description', 'LIKE', "%$search%")->orWhere('product_code', 'LIKE', "%$search%")->get();
         } else {
             $products = Product::all();
         }
@@ -51,6 +51,7 @@ class ProductsController extends Controller
             'name' => 'required',
             'description' => 'required',
             'image_path' => 'nullable',
+            'product_code' => 'required',
             'price' => 'required',
             'products_category_id' => 'required',
 
@@ -60,6 +61,7 @@ class ProductsController extends Controller
         $product->name = $request->name;
         $product->description = $request->description;
         $product->image_path = $request->image_path;
+        $product->product_code = $request->product_code;
         $product->price = $request->price;
         $product->products_category_id = $request->products_category_id;
         $product->save();

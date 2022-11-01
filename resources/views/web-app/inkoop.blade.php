@@ -18,6 +18,7 @@
                 <th scope="col">#</th>
                 <th scope="col">naam</th>
                 <th scope="col">beschrijving</th>
+                <th scope="col">product code</th>
                 <th scope="col">prijs</th>
                 <th></th>
             </tr>
@@ -28,6 +29,7 @@
                 <th scope="row"><a href="{{route('inkoop.show', $product)}}">{{$product->id}}</a></th>
                 <td>{{$product->name}}</td>
                 <td>{{$product->description}}</td>
+                <td>{{$product->product_code}}</td>
                 <td>{{$product->price}}</td>
                 <td class="buttons d-flex">
                     <a class="btn btn-warning" href="{{route('inkoop.edit' , $product)}}">aanpassen</a>
