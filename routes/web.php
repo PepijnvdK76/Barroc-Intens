@@ -49,6 +49,12 @@ Route::get('/offerte', [PagesController::class, 'offerte'])->name('offerte');
 Route::get('/dashboard', [PagesController::class, 'dashboard'])
     ->middleware(['auth'])
     ->name('dashboard');
+Route::get('/createCustomer', [PagesController::class, 'createCustomer'])
+    ->name('createCustomer');
+
+Route::get('/klantDashboard', [PagesController::class, 'klantDashboard'])
+    ->middleware(['user-role'])
+    ->name('klantDashboard');
 
 
 
@@ -71,6 +77,6 @@ Route::resource('filter', FilterController::class);
 
 Route::resource('review', Appointment_reviewContoller::class);
 Route::resource('order', OrderController::class);
-
+Route::resource('user', \App\Http\Controllers\UsersController::class);
 
 require __DIR__.'/auth.php';

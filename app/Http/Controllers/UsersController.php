@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class UsersController extends Controller
@@ -56,7 +57,9 @@ class UsersController extends Controller
      */
     public function edit($id)
     {
-        //
+        $user = User::Findorfail($id);
+
+        return view('web-app/user.edit', ['user' => $user]);
     }
 
     /**
@@ -68,7 +71,13 @@ class UsersController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $user = User::findorfail($id);
+        $user->active = $request->active;
+        $user->save();
+
+        $users = User::all();
+        return view('web-app/sales')
+            ->with(['users' => $users]);
     }
 
     /**

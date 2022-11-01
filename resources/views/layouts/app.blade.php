@@ -24,7 +24,7 @@
 <body class="antialiased d-flex flex-column h-100">
 @include('components.app-header')
 <main class="flex-shrink-0">
-    <div class="container-md bg-white">
+    <div class="container-md bg-white "style="height: 85vh">
         @yield('content')
     </div>
 </main>

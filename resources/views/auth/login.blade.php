@@ -1,8 +1,8 @@
 <x-guest-layout>
     <x-auth-card>
         <x-slot name="logo">
-            <a href="/">
-                <x-application-logo class="w-20 h-20 fill-current text-gray-500" />
+            <a href="/index">
+                <img  src="{{ Vite::asset('public/content/img/logo6_klein.png') }}" width=75%" alt="...">
             </a>
         </x-slot>
 

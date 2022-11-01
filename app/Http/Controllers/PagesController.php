@@ -6,6 +6,7 @@ use App\Models\Company;
 use App\Models\Custom_invoice;
 use App\Models\Maintenance_appointments;
 use App\Models\Product;
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class PagesController extends Controller
@@ -84,5 +85,12 @@ class PagesController extends Controller
             ->with(['machines' => $machines]);
     }
 
+    public function createCustomer()
+
+    {
+        $users = User::All();
+        return view('web-app/createCustomer')
+            ->with(['users' => $users]);
+    }
 }
 
