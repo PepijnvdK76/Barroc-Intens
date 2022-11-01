@@ -2,7 +2,7 @@
     <x-auth-card>
         <x-slot name="logo">
             <a href="/">
-                <x-application-logo class="w-20 h-20 fill-current text-gray-500" />
+                <img  src="{{ Vite::asset('public/content/img/logo6_klein.png') }}" width=75%" alt="...">
             </a>
         </x-slot>
 
@@ -30,7 +30,7 @@
 
             <!-- Soort account -->
             <div class="mt-4">
-                <x-input-label for="role_id" :value="__('Role_id')"></x-input-label>
+                <x-input-label for="role_id" :value="__('Role')"></x-input-label>
 
                 <select id="role_id"  name="role_id"  class="form-select block mt-1 w-full" aria-label="Default select example" style="border-radius: 0.375rem">
                     <option value="0">Klant</option>
