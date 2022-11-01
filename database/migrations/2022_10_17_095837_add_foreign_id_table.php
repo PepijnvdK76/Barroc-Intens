@@ -38,6 +38,8 @@ return new class extends Migration
         Schema::table('custom_invoices', function (Blueprint $table) {
             $table->foreign('company_id')
                 ->references('id')->on('companies');
+            $table->foreign('product_id')
+                ->references('id')->on('products');
         });
 
 

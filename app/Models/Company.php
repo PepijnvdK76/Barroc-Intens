@@ -8,4 +8,9 @@ use Illuminate\Database\Eloquent\Model;
 class Company extends Model
 {
     use HasFactory;
+
+    public function invoices()
+    {
+        return $this->hasMany(Custom_invoice::class);
+    }
 }

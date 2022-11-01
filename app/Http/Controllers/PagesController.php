@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Company;
+use App\Models\Custom_invoice;
 use App\Models\Maintenance_appointments;
 use App\Models\Product;
 use Illuminate\Http\Request;
@@ -14,8 +15,10 @@ class PagesController extends Controller
 
     public function finance(){
         $companies = Company::all();
+        $invoices = Custom_invoice::all();
         return view('web-app/finance')
-            ->with(['companies' => $companies]);
+            ->with(['companies' => $companies])
+            ->with(['invoices' => $invoices]);
     }
 
     public function company(){

@@ -2,7 +2,7 @@
 
 @section('content')
 
-{{--    <a href=""  class="btn btn-primary btn-lg btn-block">Zie klanten lijst</a><br>--}}
+    {{--    <a href=""  class="btn btn-primary btn-lg btn-block">Zie klanten lijst</a><br>--}}
     <a href="{{route('finance.create')}}"  class="btn btn-primary btn-lg btn-block mt-3 mb-3">Maak factuur aan</a>
 
     <table class="table table-striped bg-white">
@@ -25,7 +25,7 @@
         @foreach($companies as $company)
             <tr>
                 <th scope="row">{{$company->id}}</th>
-                <td><a href="{{route('finance.show', $company)}}">{{$company->name}}</a></td>
+                <td>{{$company->name}}</td>
                 <td>{{$company->phone}}</td>
                 <td>{{$company->street}}</td>
                 <td>{{$company->house_number}}</td>

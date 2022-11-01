@@ -18,6 +18,7 @@ return new class extends Migration
             $table->dateTime('date');
             $table->dateTime('paid_at')->nullable();
             $table->unsignedBigInteger('company_id')->nullable();
+            $table->unsignedBigInteger('product_id')->nullable();
             $table->timestamps();
         });
     }

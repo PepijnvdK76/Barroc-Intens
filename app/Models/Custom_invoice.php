@@ -10,4 +10,6 @@ class Custom_invoice extends Model
     use HasFactory;
     protected $table = 'custom_invoices';
     protected $guarded = [];
+
+
 }

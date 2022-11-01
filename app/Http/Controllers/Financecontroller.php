@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Company;
 use App\Models\Custom_invoice;
+use App\Models\Product;
 use Illuminate\Http\Request;
 
 class FinanceController extends Controller
@@ -26,7 +27,9 @@ class FinanceController extends Controller
     public function create()
     {
         $companies = Company::all();
+        $products = Product::all();
         return view('web-app.createInvoice')
+            ->with(['products' => $products])
             ->with(['companies' => $companies]);
     }
 
@@ -50,7 +53,10 @@ class FinanceController extends Controller
      */
     public function show($id)
     {
-        //
+        $company = Company::findOrFail($id);
+        return view('web-app/finance.show', [
+            'company' => $company
+        ]);
     }
 
     /**
@@ -81,8 +87,10 @@ class FinanceController extends Controller
         $company->save();
 
         $companies = Company::all();
+        $products = Product::all();
         return view('web-app/finance')
-            ->with(['companies' => $companies]);
+        ->with(['products' => $products])
+        ->with(['companies' => $companies]);
     }
 
     /**
