@@ -49,6 +49,12 @@ Route::get('/offerte', [PagesController::class, 'offerte'])->name('offerte');
 Route::get('/dashboard', [PagesController::class, 'dashboard'])
     ->middleware(['auth'])
     ->name('dashboard');
+Route::get('/createCustomer', [PagesController::class, 'createCustomer'])
+    ->name('createCustomer');
+
+Route::get('/klantDashboard', [PagesController::class, 'klantDashboard'])
+    ->middleware(['user-role'])
+    ->name('klantDashboard');
 
 
 

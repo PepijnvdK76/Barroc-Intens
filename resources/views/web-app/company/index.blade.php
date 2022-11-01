@@ -20,7 +20,7 @@
         @foreach($companies as $company)
             <tr>
                 <th scope="row">{{$company->id}}</th>
-                <td>{{$company->name}}</td>
+                <td><a href="{{route('company.show',$company)}}">{{$company->name}}</a></td>
                 <td>{{$company->phone}}</td>
                 <td>{{$company->street}}</td>
                 <td>{{$company->house_number}}</td>

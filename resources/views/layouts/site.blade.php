@@ -23,8 +23,9 @@
 </head>
 <body class="antialiased">
 @include('components.header')
-<main class="flex">
-    <div class="container">
+<main class="flex-shrink-0">
+    @yield('img')
+    <div class="container-md bg-white">
         @yield('content')
     </div>
 </main>

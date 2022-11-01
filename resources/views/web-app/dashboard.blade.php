@@ -1,9 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="container-sm bg-white">
-    <div style="padding: 29vh;">
-        <div class="container text-center">
+    <div class="position-absolute top-50 start-50 translate-middle text-center">
             <div class="row g-2">
                 <div class="col-6">
                     <a href="{{ route('inkoop.index') }}">  <div class="contactBtn rounded-5">Inkoop</div></a>
@@ -23,8 +21,5 @@
                     <a href="{{ route('company.index') }}"> <div class="contactBtn rounded-5">Klanten lijst</div></a>
                 </div>
             </div>
-        </div>
     </div>
-
-
 @endsection
