@@ -1,7 +1,7 @@
 <x-guest-layout>
     <x-auth-card>
         <x-slot name="logo">
-            <a href="/">
+            <a href="/index">
                 <img  src="{{ Vite::asset('public/content/img/logo6_klein.png') }}" width=75%" alt="...">
             </a>
         </x-slot>
