@@ -14,14 +14,53 @@
     </ul>
     <div class="tab-content" id="myTabContent">
         <div class="tab-pane fade show active" id="home-tab-pane" role="tabpanel" aria-labelledby="home-tab" tabindex="0">
-            <h1>Uw Gegevens</h1>
-            <h2>Naam: {{$company->name}}</h2>
-            <h2>Telefoon: {{$company->phone}}</h2>
-            <h2>Straat: {{$company->street}}</h2>
-            <h2>Huisnummer{{$company->house_number}}</h2>
-            <h2>Stad: {{$company->city}}</h2>
-            <h2>Land code:{{$company->country_code}}</h2>
-            <h2>BKR check: {{$company->bkr_checked_at}}</h2></div>
+            <div class="container">
+                <h1>Uw Gegevens</h1>
+
+                <div class="mb-3 row">
+                    <h2>Naam</h2>
+                    <div class="form ">
+                        <input  type="email" readonly class="form-control-plaintext bg-gray-100 border-transparent rounded " placeholder="Naam" value="{{$company->name}}">
+                    </div>
+                </div>
+                <div class="mb-3 row">
+                    <h2>Telefoon nummer</h2>
+                    <div class="form ">
+                        <input  type="email" readonly class="form-control-plaintext bg-gray-100 border-transparent rounded " placeholder="Telefoon nummer" value="{{$company->phone}}">
+                    </div>
+                </div>
+                <div class="mb-3 row">
+                    <div class="col-auto">
+                    <h2>Stad</h2>
+                        <div class="form">
+                            <input  type="email" readonly class="form-control-plaintext bg-gray-100 border-transparent rounded " placeholder="Telefoon nummer" value="{{$company->city}}">
+                        </div>
+                    </div>
+                    <div class="col-auto">
+                    <h2>Straat</h2>
+                        <div class="form ">
+                            <input  type="email" readonly class="form-control-plaintext bg-gray-100 border-transparent rounded " placeholder="Telefoon nummer" value="{{$company->street}}">
+                        </div>
+                    </div>
+                    <div class="col-auto">
+                        <h2>Huis nummer</h2>
+                        <div class="form ">
+                            <input  type="email" readonly class="form-control-plaintext bg-gray-100 border-transparent rounded " placeholder="Telefoon nummer" value="{{$company->house_number}}">
+                        </div>
+                    </div>
+                </div>
+
+                <h2>Land code</h2>
+                <div class="form mb-3">
+                    <input  type="email" readonly class="form-control-plaintext bg-gray-100 border-transparent rounded " placeholder="Telefoon nummer" value="{{$company->country_code}}">
+                </div>
+                <h2>BKR check</h2>
+                <div class="form mb-3">
+                    <input  type="email" readonly class="form-control-plaintext bg-gray-100 border-transparent rounded " placeholder="Telefoon nummer" value="{{$company->bkr_checked_at}}">
+                </div>
+
+            </div>
+        </div>
         <div class="tab-pane fade" id="Contract-tab-pane" role="tabpanel" aria-labelledby="Contract-tab" tabindex="0">
             <h1>Contracten</h1>
             {{--@foreach($contracts as  $company)
