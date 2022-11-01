@@ -10,6 +10,7 @@ body,html{
 }
 h1{
     color:white;
+    font-size: xxx-large;
 }
 img{
     height: auto;
@@ -244,10 +245,6 @@ img{
 
 }
 
-
-
-
-
 .card {
     background: #222;
     border: 2px solid #ffd700;
@@ -258,6 +255,12 @@ img{
 .card .btn {
     background: #ffd700;
     transition: all .4s ease;
+}
+.tab-pane h1 {
+    color:black!important;
+}
+ .nav-link:not(.active){
+    color: #ffd700!important;
 }
 
 
