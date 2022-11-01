@@ -77,6 +77,6 @@ Route::resource('filter', FilterController::class);
 
 Route::resource('review', Appointment_reviewContoller::class);
 Route::resource('order', OrderController::class);
-
+Route::resource('user', \App\Http\Controllers\UsersController::class);
 
 require __DIR__.'/auth.php';

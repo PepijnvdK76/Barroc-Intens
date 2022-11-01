@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Company;
 use App\Models\Maintenance_appointments;
 use App\Models\Product;
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class PagesController extends Controller
@@ -82,8 +83,11 @@ class PagesController extends Controller
     }
 
     public function createCustomer()
+
     {
-        return view('web-app/createCustomer');
+        $users = User::All();
+        return view('web-app/createCustomer')
+            ->with(['users' => $users]);
     }
 }
 
