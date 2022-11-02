@@ -70,7 +70,7 @@ class CompaniesController extends Controller
      */
     public function show($id)
     {
-        $company = Company::findOrFail($id);
+        $company = Company::where('company_id', $id)->get();
         return view('web-app.company.show')
             ->with(['company'=> $company]);
     }
