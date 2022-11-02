@@ -17,6 +17,10 @@
     </div>
 
     <div class="form-group">
+        <input type="text" name="product code" class="form-control" value="{{$product->product_code}}">
+    </div>
+
+    <div class="form-group">
         <label for="">price</label>
         <input type="number" step="any" name="price" class="form-control" value="{{$product->price}}">
     </div>

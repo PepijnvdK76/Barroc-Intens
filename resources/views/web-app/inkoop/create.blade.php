@@ -28,6 +28,11 @@
     </div>
 
     <div class="form-group" >
+        <label for="" style="border-radius: 10px;">product code</label>
+        <input type="text" name="product_code" class="form-control">
+    </div>
+
+    <div class="form-group" >
         <label for="" style="border-radius: 10px;">price</label>
         <input type="number" step="any" name="price" class="form-control">
     </div>
