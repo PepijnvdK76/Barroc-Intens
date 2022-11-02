@@ -47,8 +47,4 @@
         </div>
     </div>
 </div>
-
-
-<div style="padding: 12vh;"></div>
-</div>
 @endsection

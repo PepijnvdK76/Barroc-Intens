@@ -21,8 +21,8 @@
         <input type="number" step="any" name="price" class="form-control" value="{{$product->price}}">
     </div>
 
-    <select name="products_category_id">
-        <option value="{{$product->products_category_id}}"></option>
+    <select name="product_category_id">
+        <option value="{{$product->product_category_id}}"></option>
         <option value="1">bonen</option>
         <option value="2">apparaten</option>
         <option value="3">materiaal</option>

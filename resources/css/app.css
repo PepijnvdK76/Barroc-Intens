@@ -16,6 +16,12 @@ img{
     height: auto;
 }
 
+.wrapper {
+    box-sizing: border-box;
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+}
 
 /*Header*/
 .navbar-area {
@@ -261,6 +267,10 @@ img{
 }
  .nav-link:not(.active){
     color: #ffd700!important;
+}
+.page-footer {
+    flex-grow: 0;
+    flex-shrink: 0;
 }
 
 

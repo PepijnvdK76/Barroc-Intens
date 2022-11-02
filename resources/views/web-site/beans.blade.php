@@ -16,8 +16,9 @@
                         <h5 class="card-title">{{$bean->name}}</h5>
                         <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
                         <p class="card-text">{{$bean->description}}</p>
-                        <a href="{{ route('offerte') }}" class="btn mr-2"><i class="fas fa-link"></i> Contact ons</a>
-
+                    </div>
+                    <div class="card-footer text-muted text-center">
+                        <a href="{{ route('offerte') }}" class="btn mr-2 "><i class="fas fa-link"></i> Contact ons</a>
                     </div>
                 </div>
             </div>

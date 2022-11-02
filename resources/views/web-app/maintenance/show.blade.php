@@ -1,7 +1,7 @@
-
-<body>
 @extends('layouts.app')
-
+@section('header')
+    @include('components.app-header')
+@endsection
 @section('content')
     <div class="row d-flex justify-content-center">
         <div class="col-lg-8 mb-4 ">
@@ -16,5 +16,5 @@
         </div>
     </div>
 @endsection
-</body>
+
 

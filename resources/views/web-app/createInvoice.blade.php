@@ -25,6 +25,6 @@
                     @endforeach
                 </select>
             </div>
-            <button type="submit" class="btn bg-primary btn-primary mt-3" style="margin-bottom: 28%">Submit</button>
+            <button type="submit" class="btn bg-primary btn-primary mt-3">Submit</button>
         </form>
 @endsection

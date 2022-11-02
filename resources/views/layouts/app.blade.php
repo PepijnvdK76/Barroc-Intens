@@ -1,5 +1,24 @@
-<!DOCTYPE html>
-<html class="h-100" lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+<style>
+    html, body {
+        box-sizing: border-box!important;
+        height: 100%!important;
+        padding: 0!important;
+        margin: 0!important;
+    }
+    .wrapper {
+        box-sizing: border-box!important;
+        min-height: 100%;
+        display: flex;
+        flex-direction: column;
+    }
+    .page-header, .page-footer {
+        flex-grow: 0;
+        flex-shrink: 0;
+    }
+    .page-body {
+        flex-grow: 1;
+    }
+</style>
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -21,12 +40,10 @@
     <!-- Scripts -->
     @vite(['resources/css/app.css'{{--, 'resources/js/app.js'--}}])
 </head>
-<body class="antialiased d-flex flex-column h-100">
-@include('components.app-header')
-<main class="flex-shrink-0">
-    <div class="container-md bg-white "style="height: 85vh">
+<div class="wrapper">
+    @include('components.app-header')
+    <main class="page-body bg-white container-sm pt-4">
         @yield('content')
-    </div>
-</main>
-@include('components.footer')
-</body>
+    </main>
+    @include('components.footer')
+</div>

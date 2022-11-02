@@ -1,6 +1,5 @@
 @extends('layouts.app')
 @section('content')
-    <body style="background-color: white">
         <?php $datetoday = date("Y-m-d"); ?>
         <form action="{{route('maintenance.store')}}" method="post">
             @csrf
@@ -26,5 +25,4 @@
             </div>
             <input type="submit" value="Maak afpraak aan" class="btn btn-primary bg-primary">
         </form>
-    </body>
 @endsection

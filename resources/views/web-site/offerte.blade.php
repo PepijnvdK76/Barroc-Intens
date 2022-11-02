@@ -1,9 +1,6 @@
 @extends('layouts.app')
 
 @section('content')
-
-
-
     @if(Session::has('alert'))
         <p class="alert {{ Session::get('alert') }}">{{ Session::get('alert') }}</p>
     @endif
@@ -42,12 +39,6 @@
                     <button type="submit" value="Save Company" class="btn " style="background-color: #ffd700">Send</button>
                 </div>
             </form>
-
-
         </div>
-
     </div>
-        <div style="padding: 12vh;"></div>
-    </div>
-
 @endsection
