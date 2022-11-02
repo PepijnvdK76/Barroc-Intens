@@ -58,9 +58,8 @@ class PagesController extends Controller
 //                ->with(['company' => $company])
                 ->with(['users' => $users]);
         }else{
-            return view('web-app/company/show')
-//                ->with(['company' => $company])
-                ->with(['users' => $users]);
+            return view('web-app/company.show')
+                ->with(Auth::id());
         }
 
     }
