@@ -8,6 +8,7 @@ use App\Models\Maintenance_appointments;
 use App\Models\Product;
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class PagesController extends Controller
 {
@@ -50,8 +51,18 @@ class PagesController extends Controller
     }
     public function dashboard()
     {
-        return view('web-app/dashboard')
-            ;
+//        $company = Company::all();
+        $users = User::all();
+        if (Auth::user()->role_id == 1){//1 = medewerker
+            return view('web-app/dashboard')
+//                ->with(['company' => $company])
+                ->with(['users' => $users]);
+        }else{
+            return view('web-app/company/show')
+//                ->with(['company' => $company])
+                ->with(['users' => $users]);
+        }
+
     }
 
     //web-site

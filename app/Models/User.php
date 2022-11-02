@@ -34,6 +34,8 @@ class User extends Authenticatable
         'remember_token',
     ];
 
+
+
     /**
      * The attributes that should be cast.
      *
@@ -50,5 +52,9 @@ class User extends Authenticatable
     }
     public function isCustomer(){
         return $this->getRole() == 'customer';
+    }
+
+    public function company(){
+        return $this->hasOne(Company::class, 'contact_id');
     }
 }

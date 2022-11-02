@@ -20,43 +20,43 @@
                 <div class="mb-3 row">
                     <h2>Naam</h2>
                     <div class="form ">
-                        <input  type="email" readonly class="form-control-plaintext bg-gray-100 border-transparent rounded " placeholder="Naam" value="{{$company->name}}">
+                        <input  type="email" readonly class="form-control-plaintext bg-gray-100 border-transparent rounded " placeholder="Naam" value="{{\Auth::user()->company->name ?? 'None'}}">
                     </div>
                 </div>
                 <div class="mb-3 row">
                     <h2>Telefoon nummer</h2>
                     <div class="form ">
-                        <input  type="email" readonly class="form-control-plaintext bg-gray-100 border-transparent rounded " placeholder="Telefoon nummer" value="{{$company->phone}}">
+                        <input  type="email" readonly class="form-control-plaintext bg-gray-100 border-transparent rounded " placeholder="Telefoon nummer" value="{{\Auth::user()->company->phone ?? 'None'}}">
                     </div>
                 </div>
                 <div class="mb-3 row">
                     <div class="col-auto">
                     <h2>Stad</h2>
                         <div class="form">
-                            <input  type="email" readonly class="form-control-plaintext bg-gray-100 border-transparent rounded " placeholder="Telefoon nummer" value="{{$company->city}}">
+                            <input  type="email" readonly class="form-control-plaintext bg-gray-100 border-transparent rounded " placeholder="Telefoon nummer" value="{{\Auth::user()->company->city ?? 'None'}}">
                         </div>
                     </div>
                     <div class="col-auto">
                     <h2>Straat</h2>
                         <div class="form ">
-                            <input  type="email" readonly class="form-control-plaintext bg-gray-100 border-transparent rounded " placeholder="Telefoon nummer" value="{{$company->street}}">
+                            <input  type="email" readonly class="form-control-plaintext bg-gray-100 border-transparent rounded " placeholder="Telefoon nummer" value="{{\Auth::user()->company->street ?? 'None'}}">
                         </div>
                     </div>
                     <div class="col-auto">
                         <h2>Huis nummer</h2>
                         <div class="form ">
-                            <input  type="email" readonly class="form-control-plaintext bg-gray-100 border-transparent rounded " placeholder="Telefoon nummer" value="{{$company->house_number}}">
+                            <input  type="email" readonly class="form-control-plaintext bg-gray-100 border-transparent rounded " placeholder="Telefoon nummer" value="{{\Auth::user()->company->house_number ?? 'None'}}">
                         </div>
                     </div>
                 </div>
 
                 <h2>Land code</h2>
                 <div class="form mb-3">
-                    <input  type="email" readonly class="form-control-plaintext bg-gray-100 border-transparent rounded " placeholder="Telefoon nummer" value="{{$company->country_code}}">
+                    <input  type="email" readonly class="form-control-plaintext bg-gray-100 border-transparent rounded " placeholder="Telefoon nummer" value="{{\Auth::user()->company->country_code ?? 'None'}}">
                 </div>
                 <h2>BKR check</h2>
                 <div class="form mb-3">
-                    <input  type="email" readonly class="form-control-plaintext bg-gray-100 border-transparent rounded " placeholder="Telefoon nummer" value="{{$company->bkr_checked_at}}">
+                    <input  type="email" readonly class="form-control-plaintext bg-gray-100 border-transparent rounded " placeholder="Telefoon nummer" value="{{\Auth::user()->company->bkr_checked_at ?? 'None'}}">
                 </div>
 
             </div>

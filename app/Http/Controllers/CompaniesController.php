@@ -70,10 +70,9 @@ class CompaniesController extends Controller
      */
     public function show($id)
     {
-        $company = Company::FindOrFail($id);
-        return view('web-app.company.show',[
-            'company'=> $company
-        ]);
+        $company = Company::findOrFail($id);
+        return view('web-app.company.show')
+            ->with(['company'=> $company]);
     }
 
     /**
