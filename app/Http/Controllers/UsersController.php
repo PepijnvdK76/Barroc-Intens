@@ -72,7 +72,7 @@ class UsersController extends Controller
     public function update(Request $request, $id)
     {
         $user = User::findorfail($id);
-        $user->active = $request->active;
+        $user->active = $request->active + 1;
         $user->save();
 
         $users = User::all();

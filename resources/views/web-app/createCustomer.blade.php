@@ -23,7 +23,13 @@
             @else
                 <td>not active</td>
             @endif
-            <td><a class="btn btn-warning" href="{{route('user.edit' , $user)}}">Account Activeren</a></td>
+            <td>
+                <form  method="POST" action="{{route('user.update', $user)}}">
+                    @csrf
+                    @method('put')
+                    <input @if($user->active == 1) disabled @endif type="submit"  class="btn btn-warning ">
+                </form>
+            </td>
         </tr>
 
         </tbody>
