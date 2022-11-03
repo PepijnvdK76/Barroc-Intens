@@ -16,7 +16,6 @@
         <div class="tab-pane fade show active" id="home-tab-pane" role="tabpanel" aria-labelledby="home-tab" tabindex="0">
             <div class="container">
                 <h1>Uw Gegevens</h1>
-
                 <div class="mb-3 row">
                     <h2>Naam</h2>
                     <div class="form ">
@@ -95,5 +94,4 @@
                 </div>
             </div>
         </div>
-    </div>
 @endsection

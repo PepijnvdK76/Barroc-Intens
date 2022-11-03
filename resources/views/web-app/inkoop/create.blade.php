@@ -3,7 +3,6 @@
 @section('content')
 
 
-<div class="container-sm bg-white">
 
     <div class="container-sm d-flex" style="max-width: 5000px; color: white; align-items: center; padding-left: 250px">
 
@@ -51,5 +50,4 @@
 </form>
         </div>
     </div>
-</div>
 @endsection

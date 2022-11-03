@@ -11,3 +11,12 @@
     </div>
     </div>
 @endsection
+@section('content')
+    <div class="row py-4">
+        TErstTErst
+        <form method="POST" action="{{route('logout')}}">
+            @csrf
+            <input class="btn btn-danger bg-danger" type="submit" value="delete">
+        </form>
+    </div>
+@endsection

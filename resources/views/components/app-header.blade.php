@@ -5,7 +5,7 @@
                 <img  src="{{ Vite::asset('public/content/img/logo6_klein.png') }}" width=75%" alt="...">
             </a>
         </div>
-
+        @yield('headerName')
         <div class="ms-auto p-2">
         </div>
         <div>

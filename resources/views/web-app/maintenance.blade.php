@@ -1,7 +1,8 @@
-
 @extends('layouts.app')
+@section('headerName')
+    <h1 class="text-black">Maintenance</h1>
+@endsection
 @section('content')
-<h1 class="text-dark">maintenance</h1>
     <a href="{{route('maintenance.create')}}" class="btn btn-primary">Afspraak aanmaken</a>
 <form action="{{route('filter.store')}}" method="POST">
     @csrf
