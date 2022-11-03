@@ -1,7 +1,6 @@
-{{--@extends('layouts.app')--}}
+@extends('layouts.app')
 <!-- CSS only -->
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
-{{--@section('content')--}}
+@section('content')
     <ul class="nav nav-tabs py-2" id="myTab" role="tablist">
         <li class="nav-item" role="presentation">
             <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home-tab-pane" type="button" role="tab" aria-controls="home-tab-pane" aria-selected="true">User</button>
@@ -14,7 +13,7 @@
         </li>
     </ul>
     <div class="tab-content" id="myTabContent">
-        <div class="tab-pane fade " id="home-tab-pane" role="tabpanel" aria-labelledby="home-tab" tabindex="0">
+        <div class="tab-pane fade show active" id="home-tab-pane" role="tabpanel" aria-labelledby="home-tab" tabindex="0">
             <div class="container">
                 <h1>Uw Gegevens</h1>
 
@@ -70,7 +69,7 @@
 
             @endforeach--}}
         </div>
-        <div class="tab-pane fade show active" id="facturen-tab-pane" role="tabpanel" aria-labelledby="facturen-tab" tabindex="0">
+        <div class="tab-pane fade " id="facturen-tab-pane" role="tabpanel" aria-labelledby="facturen-tab" tabindex="0">
             <div class="container">
             <h1>Facturen</h1>
                 <table class="table">
@@ -88,7 +87,7 @@
                         <td>{{$invoice->id}}</td>
                         <td>{{$invoice->date}}</td>
                         <td>@if($invoice->paid_at != null) {{$invoice->paid_at}} @else nog niet betaald @endif</td>
-                        <td><button type="button" class="btn btn-primary"><a class="text-white" href="">Details</a></button></td>
+                        <td><button type="button" class="btn btn-primary"><a class="text-white" href="{{route("invoice.show", $invoice->id)}}">Details</a></button></td>
                     </tr>
                     @endforeach
                     </tbody>
@@ -97,4 +96,4 @@
             </div>
         </div>
     </div>
-{{--@endsection--}}
+@endsection
