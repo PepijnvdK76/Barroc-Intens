@@ -7,7 +7,7 @@ use App\Models\Custom_invoice;
 use App\Models\Product;
 use Illuminate\Http\Request;
 
-class FinanceController extends Controller
+class Paidstatuscontroller extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,7 +16,7 @@ class FinanceController extends Controller
      */
     public function index()
     {
-        return view('web-app.finance');
+        //
     }
 
     /**
@@ -26,11 +26,7 @@ class FinanceController extends Controller
      */
     public function create()
     {
-        $companies = Company::all();
-        $products = Product::all();
-        return view('web-app.createInvoice')
-            ->with(['products' => $products])
-            ->with(['companies' => $companies]);
+        //
     }
 
     /**
@@ -41,8 +37,7 @@ class FinanceController extends Controller
      */
     public function store(Request $request)
     {
-        $invoice = Custom_invoice::create($request->except('_token') );
-        return redirect(route('finance.index'))->with('message', "Factuur succesvol aangemaakt!");
+        //
     }
 
     /**
@@ -53,14 +48,7 @@ class FinanceController extends Controller
      */
     public function show($id)
     {
-        $invoices = Custom_invoice::select("*")
-            ->where("company_id", "=", $id)
-            ->get();
-        $company = Company::findOrFail($id);
-        return view('web-app/finance.show', [
-            'company' => $company,
-            'invoices' => $invoices
-        ]);
+        //
     }
 
     /**
@@ -71,9 +59,8 @@ class FinanceController extends Controller
      */
     public function edit($id)
     {
-        $company = Company::Findorfail($id);
-
-        return view('web-app/finance.edit', ['company' => $company]);
+        $invoice = Custom_invoice::Findorfail($id);
+        return view('web-app/finance.show', ['invoice' => $invoice]);
     }
 
     /**
@@ -85,21 +72,6 @@ class FinanceController extends Controller
      */
     public function update(Request $request, $id)
     {
-
-        $company = Company::findorfail($id);
-        $company->bkr_checked_at = $request->bkr_checked_at;
-        $company->save();
-
-        $companies = Company::all();
-        $products = Product::all();
-        return view('web-app/finance')
-        ->with(['products' => $products])
-        ->with(['companies' => $companies]);
-    }
-
-    public function updatePaidStatus(Request $request, $id)
-    {
-
         $invoice = Custom_invoice::findorfail($id);
         $invoice->paid_at = $request->paid_at;
         $invoice->save();

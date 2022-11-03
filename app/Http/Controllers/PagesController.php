@@ -23,6 +23,12 @@ class PagesController extends Controller
             ->with(['invoices' => $invoices]);
     }
 
+    public function paidStatus($id){
+        $invoice = Custom_invoice::findorfail($id);
+        return view('web-app/finance/editPaidStatus')
+            ->with(['invoice' => $invoice]);
+    }
+
     public function company(){
         $companies = Company::all();
         return view('web-app/company')

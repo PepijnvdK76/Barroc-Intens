@@ -62,7 +62,10 @@ Route::get('/klantDashboard', [PagesController::class, 'klantDashboard'])
 Route::get('/sales', [PagesController::class, 'sales']);
 
 Route::resource('finance', FinanceController::class);
+Route::resource('paidstatus', \App\Http\Controllers\Paidstatuscontroller::class);
 Route::get('/finance', [PagesController::class, 'finance'])->name('finance.index');
+
+Route::get('/finance/editStatus/{id}', [PagesController::class, 'paidStatus'])->name('finance.updatePaidStatus');
 
 Route::resource('sales', NotesController::class);
 Route::get('/inkoop', [PagesController::class, 'inkoop'])->name('inkoop');
