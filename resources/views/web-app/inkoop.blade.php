@@ -7,7 +7,7 @@
 {{--<form action=""  class="col-9">
     @csrf
 <div class="form-group">
-    <input type="search" name="search" id="" class="form-control" placeholder="Zoek een product" value="{{$search}}">
+    <input type="search" name="search" id="" class="form-control" style="border-radius: 0.375rem" placeholder="Zoek een product" value="{{$search}}">
 </div>
     <button class="btn btn-primary">Search</button>
 </form>
