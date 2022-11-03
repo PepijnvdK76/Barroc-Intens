@@ -15,8 +15,8 @@
     <form method="POST" action="{{route('inkoop.store')}}">
     @csrf
     <div class="mb-3">
-        <label for="" style="border-radius: 10px;">name</label>
-        <input type="text" name="name" class="form-control">
+        <label for="">name</label>
+        <input type="text" name="name" class="form-control" style="border-radius: 0.375rem">
     </div>
     <div class="form-group">
         <label for="">description</label>
@@ -24,17 +24,17 @@
     </div>
     <div class="form-group" >
         <label for="" style="border-radius: 10px;">image path</label>
-        <input type="text" name="image_path" class="form-control">
+        <input type="text" name="image_path" class="form-control" style="border-radius: 0.375rem">
     </div>
 
     <div class="form-group" >
         <label for="" style="border-radius: 10px;">product code</label>
-        <input type="text" name="product_code" class="form-control">
+        <input type="text" name="product_code" class="form-control" style="border-radius: 0.375rem">
     </div>
 
     <div class="form-group" >
         <label for="" style="border-radius: 10px;">price</label>
-        <input type="number" step="any" name="price" class="form-control">
+        <input type="number" step="any" name="price" class="form-control" style="border-radius: 0.375rem">
     </div>
 
 
