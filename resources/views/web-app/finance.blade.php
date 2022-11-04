@@ -15,14 +15,12 @@
                         </div>
                         <div class="col-sm-9 col-xs-12 text-right">
                             <div class="btn_group">
-                                <form action="" >
+                                {{--<form action="" >
                                     @csrf
-{{--
                                     <input type="search" name="search" id="" class="form-control" placeholder="Zoek een product" value="{{$search}}">
---}}
                                     <button class="btn btn-default">Search</button>
-                                </form>
-                                <a class="btn btn-warning" href="{{route('inkoop.create')}}">Product aanmaken</a>
+                                </form>--}}
+                                <a class="btn btn-warning" href="{{route('finance.create')}}">Maak factuur aan</a>
 
                             </div>
                         </div>
@@ -49,7 +47,7 @@
                             <tbody>
                             <tr class="border-bottom" >
                                 <th scope="row"></th>
-                                <td><a href="{{route('finance.show', $company)}}">{{$company->name}}</a></td>
+                                <td><a href="{{route('company.show', $company)}}">{{$company->name}}</a></td>
                                 <td>{{$company->phone}}</td>
                                 <td>{{$company->street}}</td>
                                 <td>{{$company->house_number}}</td>
@@ -87,9 +85,6 @@
         </div>
     </div>
 </div>
-    </table>
-
-    <a href="{{route('finance.create')}}"  class="btn btn-primary btn-lg btn-block mt-3 mb-3">Maak factuur aan</a>
 
 @endsection
 

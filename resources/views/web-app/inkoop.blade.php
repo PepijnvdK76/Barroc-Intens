@@ -58,13 +58,13 @@
                         </div>
                         <div class="col-sm-9 col-xs-12 text-right">
                             <div class="btn_group">
+                                <a class="btn btn-warning mb-2" href="{{route('inkoop.create')}}">Product aanmaken</a>
+
                                 <form action="" >
                                     @csrf
                                         <input type="search" name="search" id="" class="form-control" placeholder="Zoek een product" value="{{$search}}">
                                     <button class="btn btn-default">Search</button>
                                 </form>
-                                <a class="btn btn-warning" href="{{route('inkoop.create')}}">Product aanmaken</a>
-
                             </div>
                         </div>
                     </div>
@@ -83,18 +83,18 @@
                         </thead>
                         @foreach($products as $product)
                             <tbody>
-                            <tr class="border-bottom" >
+                            <tr class="border-bottom">
                                 <th scope="row"></th>
                                 <td><a href="{{route('inkoop.show', $product)}}">{{$product->name}}</td>
                                 <td>{{$product->description}}</td>
                                 <td>{{$product->product_code}}</td>
                                 <td>{{$product->price}}</td>
-                                <td class="buttons d-flex justify-content-end">
-                                    <a class="btn btn-warning" href="{{route('inkoop.edit' , $product)}}">aanpassen</a>
-                                    <form method="POST" action="{{route('inkoop.destroy', $product)}}">
+                                <td class="d-flex align-items-center justify-end">
+                                    <a class="btn btn-warning mr-2" href="{{route('inkoop.edit' , $product)}}">Edit</a>
+                                    <form class="m-0" method="POST" action="{{route('inkoop.destroy', $product)}}">
                                         @csrf
                                         @method('delete')
-                                        <input class="btn btn-danger bg-danger" type="submit" value="delete">
+                                        <input class="btn btn-danger bg-danger" type="submit" value="Delete">
                                     </form>
                                 </td>
                             </tr>
