@@ -17,9 +17,6 @@
                             <div class="btn_group">
                                 <form action="" >
                                     @csrf
-{{--
-                                    <input type="search" name="search" id="" class="form-control" placeholder="Zoek een product" value="{{$search}}">
---}}
                                     <button class="btn btn-default">Search</button>
                                 </form>
                                 <a class="btn btn-warning" href="{{route('inkoop.create')}}">Product aanmaken</a>
@@ -70,14 +67,6 @@
                                 </td>
                                 <td>{{$company->updated_at}}</td>
                                 <td><a class="btn btn-warning" href="{{route('finance.edit' , $company)}}">BKR aanpassen</a></td>
-                                {{--<td class="buttons d-flex">
-                                    <a class="btn btn-warning" href="{{route('inkoop.edit' , $company)}}">aanpassen</a>
-                                    <form method="POST" action="{{route('inkoop.destroy', $company)}}">
-                                        @csrf
-                                        @method('delete')
-                                        <input class="btn btn-danger bg-danger" type="submit" value="delete">
-                                    </form>
-                                </td>--}}
                             </tr>
                             </tbody>
                         @endforeach
