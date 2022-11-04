@@ -30,7 +30,7 @@
                     <table class="table">
                         <thead>
                         <tr>
-                            <th scope="col">#</th>
+                            <th scope="col"></th>
                             <th scope="col">Bedrijfsnaam</th>
                             <th scope="col">telefoon</th>
                             <th scope="col">straat</th>
@@ -68,14 +68,6 @@
                                 </td>
                                 <td>{{$company->updated_at}}</td>
                                 <td><a class="btn btn-warning" href="{{route('finance.edit' , $company)}}">BKR aanpassen</a></td>
-                                {{--<td class="buttons d-flex">
-                                    <a class="btn btn-warning" href="{{route('inkoop.edit' , $company)}}">aanpassen</a>
-                                    <form method="POST" action="{{route('inkoop.destroy', $company)}}">
-                                        @csrf
-                                        @method('delete')
-                                        <input class="btn btn-danger bg-danger" type="submit" value="delete">
-                                    </form>
-                                </td>--}}
                             </tr>
                             </tbody>
                         @endforeach
