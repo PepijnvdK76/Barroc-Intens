@@ -29,7 +29,7 @@
                     <table class="table">
                         <thead>
                         <tr>
-                            <th scope="col">#</th>
+                            <th scope="col"></th>
                             <th scope="col">Bedrijfsnaam</th>
                             <th scope="col">telefoon</th>
                             <th scope="col">straat</th>

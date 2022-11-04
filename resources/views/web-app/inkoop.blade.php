@@ -29,7 +29,7 @@
                     <table class="table">
                         <thead>
                         <tr>
-                            <th scope="col">#</th>
+                            <th scope="col"></th>
                             <th scope="col">Naam</th>
                             <th scope="col">Beschrijving</th>
                             <th scope="col">Product code</th>
