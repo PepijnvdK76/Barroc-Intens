@@ -1,5 +1,4 @@
 @extends('layouts.app')
-<!-- CSS only -->
 @section('content')
     <ul class="nav nav-tabs py-2" id="myTab" role="tablist">
         <li class="nav-item" role="presentation">
@@ -16,48 +15,42 @@
         <div class="tab-pane fade show active" id="home-tab-pane" role="tabpanel" aria-labelledby="home-tab" tabindex="0">
             <div class="container">
                 <h1>Uw Gegevens</h1>
-                <div class="mb-3 row">
                     <h2>Naam</h2>
-                    <div class="form ">
+                    <div class="form mb-3 shadow-sm">
                         <input  type="email" readonly class="form-control-plaintext bg-gray-100 border-transparent rounded " placeholder="Naam" value="{{\Auth::user()->company->name ?? 'None'}}">
                     </div>
-                </div>
-                <div class="mb-3 row">
                     <h2>Telefoon nummer</h2>
-                    <div class="form ">
+                    <div class="form mb-3 shadow-sm ">
                         <input  type="email" readonly class="form-control-plaintext bg-gray-100 border-transparent rounded " placeholder="Telefoon nummer" value="{{\Auth::user()->company->phone ?? 'None'}}">
                     </div>
-                </div>
-                <div class="mb-3 row">
-                    <div class="col-auto">
-                    <h2>Stad</h2>
-                        <div class="form">
-                            <input  type="email" readonly class="form-control-plaintext bg-gray-100 border-transparent rounded " placeholder="Telefoon nummer" value="{{\Auth::user()->company->city ?? 'None'}}">
+                    <div class="mb-3 row ">
+                        <div class="col-auto ">
+                        <h2>Stad</h2>
+                            <div class="form mb-3 shadow-sm">
+                                <input  type="email" readonly class="form-control-plaintext bg-gray-100 border-transparent rounded " placeholder="Telefoon nummer" value="{{\Auth::user()->company->city ?? 'None'}}">
+                            </div>
+                        </div>
+                        <div class="col-auto ">
+                        <h2>Straat</h2>
+                            <div class="form mb-3 shadow-sm ">
+                                <input  type="email" readonly class="form-control-plaintext bg-gray-100 border-transparent rounded " placeholder="Telefoon nummer" value="{{\Auth::user()->company->street ?? 'None'}}">
+                            </div>
+                        </div>
+                        <div class="col-auto">
+                            <h2>Huis nummer</h2>
+                            <div class="form mb-3 shadow-sm ">
+                                <input  type="email" readonly class="form-control-plaintext bg-gray-100 border-transparent rounded " placeholder="Telefoon nummer" value="{{\Auth::user()->company->house_number ?? 'None'}}">
+                            </div>
                         </div>
                     </div>
-                    <div class="col-auto">
-                    <h2>Straat</h2>
-                        <div class="form ">
-                            <input  type="email" readonly class="form-control-plaintext bg-gray-100 border-transparent rounded " placeholder="Telefoon nummer" value="{{\Auth::user()->company->street ?? 'None'}}">
-                        </div>
+                    <h2>Land code</h2>
+                    <div class="form mb-3 shadow-sm">
+                        <input  type="email" readonly class="form-control-plaintext bg-gray-100 border-transparent rounded " placeholder="Telefoon nummer" value="{{\Auth::user()->company->country_code ?? 'None'}}">
                     </div>
-                    <div class="col-auto">
-                        <h2>Huis nummer</h2>
-                        <div class="form ">
-                            <input  type="email" readonly class="form-control-plaintext bg-gray-100 border-transparent rounded " placeholder="Telefoon nummer" value="{{\Auth::user()->company->house_number ?? 'None'}}">
-                        </div>
+                    <h2>BKR check</h2>
+                    <div class="form mb-3 shadow-sm">
+                        <input  type="email" readonly class="form-control-plaintext bg-gray-100 border-transparent rounded " placeholder="Telefoon nummer" value="{{\Auth::user()->company->bkr_checked_at ?? 'None'}}">
                     </div>
-                </div>
-
-                <h2>Land code</h2>
-                <div class="form mb-3">
-                    <input  type="email" readonly class="form-control-plaintext bg-gray-100 border-transparent rounded " placeholder="Telefoon nummer" value="{{\Auth::user()->company->country_code ?? 'None'}}">
-                </div>
-                <h2>BKR check</h2>
-                <div class="form mb-3">
-                    <input  type="email" readonly class="form-control-plaintext bg-gray-100 border-transparent rounded " placeholder="Telefoon nummer" value="{{\Auth::user()->company->bkr_checked_at ?? 'None'}}">
-                </div>
-
             </div>
         </div>
         <div class="tab-pane fade" id="Contract-tab-pane" role="tabpanel" aria-labelledby="Contract-tab" tabindex="0">
@@ -81,14 +74,14 @@
                     </tr>
                     </thead>
                     <tbody>
-                    @foreach($invoices as $invoice)
+                    {{--@foreach($invoices as $invoice)
                     <tr>
                         <td>{{$invoice->id}}</td>
                         <td>{{$invoice->date}}</td>
                         <td>@if($invoice->paid_at != null) {{$invoice->paid_at}} @else nog niet betaald @endif</td>
                         <td><button type="button" class="btn btn-primary"><a class="text-white" href="{{route("invoice.show", $invoice->id)}}">Details</a></button></td>
                     </tr>
-                    @endforeach
+                    @endforeach--}}
                     </tbody>
                 </table>
                 </div>

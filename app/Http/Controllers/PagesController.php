@@ -66,7 +66,7 @@ class PagesController extends Controller
         }else{
 
             $company = Company::where('contact_id', Auth::id())->get();
-            $invoices = Custom_invoice::where('company_id', $company->id)->get();
+            //$invoices = Custom_invoice::where('company_id', $company->id)->get();
             return view('web-app.company.show')
                   ->with(['company' => $company, 'invoices' => $invoices]);
         }

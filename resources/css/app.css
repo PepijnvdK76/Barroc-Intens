@@ -32,6 +32,15 @@ img{
     transition: all 0.3s ease-out 0s;
 }
 
+header img{
+    transition: transform 0.3s;
+}
+header img:hover{
+    transform: rotate(60deg);
+    transition: 0.3s ;
+}
+
+
 .sticky {
     position: fixed;
     z-index: 99;
@@ -43,26 +52,11 @@ img{
     -webkit-transition: all 0.3s ease-out 0s;
     transition: all 0.3s ease-out 0s;
 }
-.sticky .navbar {
-    padding: 10px 0;
-}
 
 @media only screen and (min-width: 768px) and (max-width: 991px), (max-width: 767px) {
     .sticky .navbar {
         padding: 15px 0;
     }
-}
-
-.sticky .navbar .navbar-nav .nav-item a {
-    color: #162447;
-}
-
-.sticky .navbar .navbar-nav .nav-item a::before {
-    color: #162447;
-}
-
-.sticky .navbar .navbar-toggler .toggler-icon {
-    background: #162447;
 }
 
 .navbar {
@@ -76,51 +70,6 @@ img{
     .navbar {
         padding: 17px 0;
     }
-}
-
-.navbar-brand {
-    padding: 0;
-}
-
-.navbar-brand img {
-    max-width: 180px;
-}
-
-.navbar-toggler {
-    padding: 0;
-}
-
-.navbar-toggler:focus {
-    outline: none;
-    -webkit-box-shadow: none;
-    box-shadow: none;
-}
-
-.navbar-toggler .toggler-icon {
-    width: 30px;
-    height: 2px;
-    background-color: #fff;
-    display: block;
-    margin: 5px 0;
-    position: relative;
-    -webkit-transition: all 0.3s ease-out 0s;
-    transition: all 0.3s ease-out 0s;
-}
-
-.navbar-toggler.active .toggler-icon:nth-of-type(1) {
-    -webkit-transform: rotate(45deg);
-    transform: rotate(45deg);
-    top: 7px;
-}
-
-.navbar-toggler.active .toggler-icon:nth-of-type(2) {
-    opacity: 0;
-}
-
-.navbar-toggler.active .toggler-icon:nth-of-type(3) {
-    -webkit-transform: rotate(135deg);
-    transform: rotate(135deg);
-    top: -7px;
 }
 
 @media only screen and (min-width: 768px) and (max-width: 991px), (max-width: 767px) {
@@ -206,10 +155,9 @@ img{
     color: #ffd700 ;
 }
 .contactBtn:hover{
+    transition: all 0.3s ease-out 0s;
     color: white;
 }
-
-
 .klant_aanmaken {
     display: flex;
     justify-content: start;
