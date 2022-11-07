@@ -14,7 +14,7 @@
                             <img src="{{ Vite::asset('public/content/img/machinebackground.jpg') }}" class="card-img-top" alt="...">
                             <div class="card-body">
                                 <h5 class="card-title">{{$machine->name}}</h5>
-                                <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
+                                <h6 class="card-subtitle mb-2 text-muted">{{$machine->product_code}}</h6>
                                 <p class="card-text">{{$machine->description}}</p>
                             </div>
                             <div class="card-footer text-muted text-center">
