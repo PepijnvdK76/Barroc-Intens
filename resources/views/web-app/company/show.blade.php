@@ -74,14 +74,14 @@
                     </tr>
                     </thead>
                     <tbody>
-                    {{--@foreach($invoices as $invoice)
+                    @foreach($invoices as $invoice)
                     <tr>
                         <td>{{$invoice->id}}</td>
                         <td>{{$invoice->date}}</td>
                         <td>@if($invoice->paid_at != null) {{$invoice->paid_at}} @else nog niet betaald @endif</td>
                         <td><button type="button" class="btn btn-primary"><a class="text-white" href="{{route("invoice.show", $invoice->id)}}">Details</a></button></td>
                     </tr>
-                    @endforeach--}}
+                    @endforeach
                     </tbody>
                 </table>
                 </div>
