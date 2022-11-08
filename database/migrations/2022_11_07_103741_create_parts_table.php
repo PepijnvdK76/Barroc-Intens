@@ -18,6 +18,8 @@ return new class extends Migration
             $table->string('name');
             $table->string('description');
             $table->decimal('price');
+            $table->integer('amount');
+            $table->boolean('varify')->default(1);
             $table->timestamps();
         });
     }

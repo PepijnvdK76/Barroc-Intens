@@ -12,6 +12,7 @@ use \App\Http\Controllers\Maintenance_appointmentsController;
 use App\Http\Controllers\Appointment_reviewContoller;
 use App\Http\Controllers\OrderController;
 use App\Http\Controllers\FilterController;
+use App\Http\Controllers\PartsController;
 
 
 use App\Http\Controllers\ProductsController;
@@ -77,6 +78,8 @@ Route::get('/inkoop', [PagesController::class, 'inkoop'])->name('inkoop');
 Route::resource('inkoop', ProductsController::class);
 
 Route::resource('company', CompaniesController::class);
+
+Route::resource('parts', PartsController::class);
 
 Route::resource('maintenance', Maintenance_appointmentsController::class);
 
