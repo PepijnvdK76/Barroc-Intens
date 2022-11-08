@@ -1,24 +1,4 @@
-<style>
-    html, body {
-        box-sizing: border-box!important;
-        height: 100%!important;
-        padding: 0!important;
-        margin: 0!important;
-    }
-    .wrapper {
-        box-sizing: border-box!important;
-        min-height: 100%;
-        display: flex;
-        flex-direction: column;
-    }
-    .page-header, .page-footer {
-        flex-grow: 0;
-        flex-shrink: 0;
-    }
-    .page-body {
-        flex-grow: 1;
-    }
-</style>
+<html>
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -37,13 +17,38 @@
     <!-- JavaScript Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
 
+    <style>
+        html, body {
+            box-sizing: border-box!important;
+            height: 100%!important;
+            padding: 0!important;
+            margin: 0!important;
+        }
+        .wrapper {
+            box-sizing: border-box!important;
+            min-height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+        .page-header, .page-footer {
+            flex-grow: 0;
+            flex-shrink: 0;
+        }
+        .page-body {
+            flex-grow: 1;
+        }
+    </style>
+
     <!-- Scripts -->
-    @vite(['resources/css/app.css'{{--, 'resources/js/app.js'--}}])
+    @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
+<body>
 <div class="wrapper">
     @include('components.app-header')
-    <main class="page-body bg-white container-sm">
-
+    <main class="page-body bg-white container-sm pt-4">
+        @yield('content')
     </main>
     @include('components.footer')
 </div>
+</body>
+</html>
