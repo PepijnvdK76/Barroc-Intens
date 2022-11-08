@@ -28,7 +28,7 @@
             </div>
                 <div>
                 <a href="{{ route('offerte') }}">
-                    <div class="contactBtn">
+                    <div class="contactBtn ">
                         <p>Contact</p>
                     </div>
                 </a>
