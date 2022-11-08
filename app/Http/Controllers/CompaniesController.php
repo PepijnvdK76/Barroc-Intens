@@ -15,12 +15,19 @@ class CompaniesController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        $companies = Company::all();
-        return view('web-app.company.index', [
-            'companies'=> $companies
-        ]);
+        $search = $request['search'] ?? "";
+
+        if ($search != "") {
+            //where
+            $companies = Company::where('name', 'LIKE', "%$search%")->orWhere('phone', 'LIKE', "%$search%")->orWhere('street', 'LIKE', "%$search%")->orWhere('house_number', 'LIKE', "%$search%")->orWhere('city', 'LIKE', "%$search%")->orWhere('country_code', 'LIKE', "%$search%")->get();
+        } else {
+            $companies = Company::all();
+        }
+        $data = compact('companies','search');
+        return view('web-app.company.index')
+            ->with($data);
     }
 
     /**

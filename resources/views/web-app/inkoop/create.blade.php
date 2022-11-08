@@ -8,31 +8,31 @@
 
         <div class="shadow p-3 mb-5  rounded" style="background-color: #212121; margin-top: 50px; border-radius: 10px;  width: 800px;">
             <div>
-                <h1>Producten</h1>
+                <h1>Product aanmaken</h1>
             </div>
 
     <form method="POST" action="{{route('inkoop.store')}}">
     @csrf
     <div class="mb-3">
-        <label for="">name</label>
+        <label for="">Naam</label>
         <input type="text" name="name" class="form-control" style="border-radius: 0.375rem">
     </div>
     <div class="form-group">
-        <label for="">description</label>
+        <label for="">Beschrijving</label>
         <textarea name="description" class="form-control" id="" cols="" rows="10"> </textarea>
     </div>
     <div class="form-group" >
-        <label for="" style="border-radius: 10px;">image path</label>
+        <label for="" style="border-radius: 10px;">Foto</label>
         <input type="text" name="image_path" class="form-control" style="border-radius: 0.375rem">
     </div>
 
     <div class="form-group" >
-        <label for="" style="border-radius: 10px;">product code</label>
+        <label for="" style="border-radius: 10px;">Product code</label>
         <input type="text" name="product_code" class="form-control" style="border-radius: 0.375rem">
     </div>
 
     <div class="form-group" >
-        <label for="" style="border-radius: 10px;">price</label>
+        <label for="" style="border-radius: 10px;">Prijs</label>
         <input type="number" step="any" name="price" class="form-control" style="border-radius: 0.375rem">
     </div>
 
