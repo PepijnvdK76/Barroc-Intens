@@ -1,5 +1,5 @@
-@extends('layouts.app')
-@section('content')
+{{--@extends('layouts.app')--}}
+{{--@section('content')--}}
     <ul class="nav nav-tabs py-2" id="myTab" role="tablist">
         <li class="nav-item" role="presentation">
             <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home-tab-pane" type="button" role="tab" aria-controls="home-tab-pane" aria-selected="true">User</button>
@@ -51,6 +51,14 @@
                     <div class="form mb-3 shadow-sm">
                         <input  type="email" readonly class="form-control-plaintext bg-gray-100 border-transparent rounded " placeholder="Telefoon nummer" value="{{\Auth::user()->company->bkr_checked_at ?? 'None'}}">
                     </div>
+                    <h2>Gegevens aanpassen</h2>
+                <div class="form mb-3 shadow-sm">
+                    <td><button type="button" class="btn btn-primary"><a class="text-white" href="{{route("company.edit", $company->id)}}">aanpassen</a></button></td>
+                    <h2>Gegevens verwijderen</h2>
+                    <div class="form mb-3 shadow-sm">
+                        <p> Om u gegevens te laten verwijder moet u een mail sturen naar : privacy@barroc.it</p>
+                    </div>
+                </div>
             </div>
         </div>
         <div class="tab-pane fade" id="Contract-tab-pane" role="tabpanel" aria-labelledby="Contract-tab" tabindex="0">
@@ -74,17 +82,17 @@
                     </tr>
                     </thead>
                     <tbody>
-                    {{--@foreach($invoices as $invoice)
+                    @foreach($invoices as $invoice)
                     <tr>
                         <td>{{$invoice->id}}</td>
                         <td>{{$invoice->date}}</td>
                         <td>@if($invoice->paid_at != null) {{$invoice->paid_at}} @else nog niet betaald @endif</td>
                         <td><button type="button" class="btn btn-primary"><a class="text-white" href="{{route("invoice.show", $invoice->id)}}">Details</a></button></td>
                     </tr>
-                    @endforeach--}}
+                    @endforeach
                     </tbody>
                 </table>
                 </div>
             </div>
         </div>
-@endsection
+{{--@endsection--}}

@@ -65,8 +65,13 @@ class PagesController extends Controller
                 ->with(['users' => $users]);
         }else{
 
+
             $company = Company::where('contact_id', Auth::id())->get();
-            //$invoices = Custom_invoice::where('company_id', $company->id)->get();
+            $invoices = Custom_invoice::where('company_id', $company->id)->get();
+
+            $company = Company::where('contact_id', Auth::id())->first();
+            $invoices = Custom_invoice::where('company_id', $company->id)->get();
+
             return view('web-app.company.show')
                   ->with(['company' => $company, 'invoices' => $invoices]);
         }
@@ -82,6 +87,10 @@ class PagesController extends Controller
     public function index()
     {
         return view('web-site/index')  ;
+    }
+    public function privacy()
+    {
+        return view('web-site/privacy')  ;
     }
     public function contact()
     {
