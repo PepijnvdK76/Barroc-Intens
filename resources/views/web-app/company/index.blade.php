@@ -8,15 +8,15 @@
                     <div class="panel-heading">
                         <div class="row">
                             <div class="col col-sm-3 col-xs-12">
-                                <h4 class="title">Bedrijf<span>Lijst</span></h4>
+                                <h4 class="title">Bedrijf <span>Lijst</span></h4>
                             </div>
                             <div class="col-sm-9 col-xs-12 text-right">
                                 <div class="btn_group">
-                                    {{--<form action="" >
+                                    <form action="" >
                                         @csrf
-                                        <input type="search" name="search" id="" class="form-control" placeholder="Zoek een product" value="{{$search}}">
-                                        <button class="btn btn-default">Search</button>
-                                    </form>--}}
+                                        <input type="search" name="search" id="" class="form-control" placeholder="Zoek een bedrijf" value="{{$search}}">
+                                        <button class="btn btn-default">Zoek</button>
+                                    </form>
                                 </div>
                             </div>
                         </div>
