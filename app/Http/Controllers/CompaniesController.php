@@ -94,7 +94,8 @@ class CompaniesController extends Controller
      */
     public function edit($id)
     {
-        //
+        $company = Company::findorfail($id);
+        return view('web-app/company/edit')->with(['company' => $company]);
     }
 
     /**
@@ -106,7 +107,19 @@ class CompaniesController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $company = Company::findorfail($id);
+        $company->name = $request->name;
+        $company->phone = $request->phone;
+        $company->street = $request->street;
+        $company->house_number = $request->house_number;
+        $company->city = $request->city;
+        $company->country_code = $request->country_code;
+        $company->save();
+
+        $company = Company::where('contact_id', Auth::id())->first();
+        $invoices = Custom_invoice::where('company_id', $company->id)->get();
+        return view('web-app.company.show')
+            ->with(['company' => $company, 'invoices' => $invoices]);
     }
 
     /**
