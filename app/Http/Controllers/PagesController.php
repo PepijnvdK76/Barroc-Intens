@@ -83,6 +83,10 @@ class PagesController extends Controller
     {
         return view('web-site/index')  ;
     }
+    public function privacy()
+    {
+        return view('web-site/privacy')  ;
+    }
     public function contact()
     {
         return view('web-site/contact')  ;
