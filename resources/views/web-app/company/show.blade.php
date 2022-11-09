@@ -10,6 +10,9 @@
         <li class="nav-item" role="presentation">
             <button class="nav-link" id="facturen-tab" data-bs-toggle="tab" data-bs-target="#facturen-tab-pane" type="button" role="tab" aria-controls="facturen-tab-pane" aria-selected="false">Facturen</button>
         </li>
+        <li class="nav-item" role="presentation">
+            <button class="nav-link" id="facturen-tab" data-bs-toggle="tab" data-bs-target="#Maintenance-tab-pane" type="button" role="tab" aria-controls="Maintenance-tab-pane" aria-selected="false">Storingsaanvragen</button>
+        </li>
     </ul>
     <div class="tab-content" id="myTabContent">
         <div class="tab-pane fade show active" id="home-tab-pane" role="tabpanel" aria-labelledby="home-tab" tabindex="0">
@@ -94,5 +97,29 @@
                 </table>
                 </div>
             </div>
+        <div class="tab-pane fade" id="Maintenance-tab-pane" role="tabpanel" aria-labelledby="Maintenance-tab" tabindex="0">
+            <h1>Storingsaanvragen</h1>
+            <a href="{{route('maintenance.createAppointment', $company)}}" class="btn btn-primary">Afspraak aanmaken</a>
+            <table class="table">
+                <thead>
+                <tr>
+                    <th scope="col">Afspraak nummer</th>
+                    <th scope="col">Datum</th>
+                    <th scope="col">Opmerking</th>
+                    <th scope="col">Details</th>
+                </tr>
+                </thead>
+                <tbody>
+                @foreach($appointments as $appointment)
+                    <tr>
+                        <td>{{$appointment->id}}</td>
+                        <td>{{$appointment->date}}</td>
+                        <td>{{$appointment->remark}}</td>
+                        <td><button type="button" class="btn btn-primary"><a class="text-white" href="{{route("invoice.show", $invoice->id)}}">Details</a></button></td>
+                    </tr>
+                @endforeach
+                </tbody>
+            </table>
+        </div>
         </div>
 @endsection

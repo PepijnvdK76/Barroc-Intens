@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Company;
 use App\Models\Maintenance_appointments;
+use App\Models\Product;
 use Illuminate\Http\Request;
 
 class Maintenance_appointmentsController extends Controller
@@ -28,9 +29,11 @@ class Maintenance_appointmentsController extends Controller
     public function create()
     {
         $companies = Company::all();
+        $products = Product::all();
         $appointments = Maintenance_appointments::all();
         return view('web-app/maintenance/create')
             ->with(['appointments' => $appointments])
+            ->with(['products' => $products])
             ->with(['companies' => $companies]);
     }
 

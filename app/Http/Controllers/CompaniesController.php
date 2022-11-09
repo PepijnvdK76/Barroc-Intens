@@ -5,6 +5,7 @@ use App\Models\Company;
 
 use App\Models\Custom_invoice;
 use App\Models\Custom_invoice_product;
+use App\Models\Maintenance_appointments;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -81,9 +82,10 @@ class CompaniesController extends Controller
     public function show($id)
     {
         $company = Company::where('contact_id', Auth::id())->get();
+        $appointments = Maintenance_appointments::where('company_id', $id)->get();
         $invoices = Custom_invoice::where('company_id', $id)->get();
         return view('web-app.company.show')
-            ->with(['company'=> $company, 'invoices' => $invoices]);
+            ->with(['company'=> $company, 'invoices' => $invoices, 'appointments' => $appointments]);
     }
 
     /**

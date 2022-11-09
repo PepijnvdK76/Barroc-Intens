@@ -68,6 +68,8 @@ return new class extends Migration
         Schema::table('maintenance_appointments', function (Blueprint $table) {
             $table->foreign('company_id')
                 ->references('id')->on('companies');
+            $table->foreign('product_id')
+                ->references('id')->on('products');
         });
     }
 

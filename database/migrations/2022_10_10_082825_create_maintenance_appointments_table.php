@@ -17,6 +17,7 @@ return new class extends Migration
             $table->id();
             $table->text('title');
             $table->unsignedBigInteger('company_id')->nullable();
+            $table->unsignedBigInteger('product_id')->nullable();
             $table->longText('remark');
             $table->dateTime('date');
             $table->Time('date_started')->nullable();
