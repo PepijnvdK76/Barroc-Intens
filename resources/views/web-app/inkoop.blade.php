@@ -16,7 +16,14 @@
                             <div class="btn_group">
                                 <a class="btn btn-warning mb-2" href="{{route('inkoop.create')}}">Product aanmaken</a>
 
+
                                 <form action="" >
+
+
+
+
+                                <form action="{{route('filterStatus.store')}}" method="POST">
+>
                                     @csrf
                                         <input type="search" name="search" id="" class="form-control" placeholder="Zoek een product" value="{{$search}}">
                                     <button class="btn btn-default">Search</button>
