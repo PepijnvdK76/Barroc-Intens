@@ -36,6 +36,7 @@ color: #212121!important;
     z-index: 99;
     -webkit-transition: all 0.3s ease-out 0s;
     transition: all 0.3s ease-out 0s;
+
 }
 
 header img{
@@ -152,12 +153,13 @@ header img:hover{
     border-top-left-radius: 25%;
     padding: 1.7rem !important;
 }
-.BarrocYellow{
-    color: #ffd700 ;
-}
-.contactBtn:hover{
+
+.header .contactBtn:hover{
     transition: all 0.3s ease-out 0s;
     color: white;
+    padding-left: 50px !important;
+    border-bottom-left-radius: 55%;
+    border-top-left-radius: 55%;
 }
 .klant_aanmaken {
     display: flex;
@@ -179,15 +181,23 @@ header img:hover{
     height: 100%;
     width: 100%;
 }
+.BarrocYellowBtn{
+    background-color: #ffd700 ;
+    color: black;
+    font-size: x-large;
+}
+.BarrocYellowBtn:hover{
+    color: white;
+    background-color: #ffd700 ;
 
+}
 /* Position text in the middle of the page/image */
 .bg-text {
     font-family: 'Big Shoulders Display', cursive;
-    background-color: rgb(0,0,0); /* Fallback color */
-    background-color: rgba(0,0,0, 0.4); /* Black w/opacity/see-through */
+   /* background-color: rgb(0,0,0); !* Fallback color *!
+    background-color: rgba(0,0,0, 0.4); !* Black w/opacity/see-through *!*/
     color: white;
     font-size: 38px;
-    border: 3px solid #f1f1f1;
     position: absolute;
     top: 50%;
     left: 50%;
