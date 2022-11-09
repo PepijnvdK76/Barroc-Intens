@@ -64,16 +64,6 @@ class PagesController extends Controller
 //                ->with(['company' => $company])
                 ->with(['users' => $users]);
 
-        }
-        else {
-
-
-            $company = Company::where('contact_id', Auth::id())->get();
-            $invoices = Custom_invoice::where('company_id', $company->id)->get();
-
-            $company = Company::where('contact_id', Auth::id())->first();
-            $invoices = Custom_invoice::where('company_id', $company->id)->get();
-
 
         }else{
             $company = Company::where('contact_id', Auth::id())->first();
