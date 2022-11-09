@@ -1,7 +1,7 @@
 
 @extends('layouts.app')
 @section('content')
-<h1>Uw Gegevens</h1>
+<h1 class="text-black">Uw Gegevens</h1>
     <form method="POST" action="{{route('company.update', $company)}}">
         @csrf
         @method('PUT')

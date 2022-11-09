@@ -3,10 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\Part;
-use App\Models\Product;
 use Illuminate\Http\Request;
 
-class PartsController extends Controller
+class ConfirmController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,23 +14,7 @@ class PartsController extends Controller
      */
     public function index()
     {
-
-        $parts = Part::orderBy('amount', 'asc')->get();
-        $confirms = Part::where('varify' , '0')->get();
-        $search = $request['search'] ?? "";
-
-        if ($search != "") {
-            //where
-            $products = Product::where('name', 'LIKE', "%$search%")->orWhere('price', 'LIKE', "%$search%")->orWhere('description', 'LIKE', "%$search%")->orWhere('product_code', 'LIKE', "%$search%")->get();
-        } else {
-            $products = Product::all();
-        }
-        $data = compact('products','search');
-        return view('web-app/parts')
-            ->with($data)
-            ->with(['confirms' => $confirms])
-            ->with(['parts' => $parts]);
-
+        //
     }
 
     /**
@@ -86,20 +69,10 @@ class PartsController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $this->validate($request, [
-            'amount' => 'required',
-
-        ]);
-
         $part = Part::findorfail($id);
-        $part->amount = $request->amount + $part->amount;
-        if ($part->amount > 4999)
-        {
-            $part->varify = false;
-        }
+        $part->varify = true;
         $part->save();
         return back();
-
     }
 
     /**

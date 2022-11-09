@@ -2,7 +2,7 @@
 <!-- CSS only -->
 @section('content')
 <div class="container">
-<h1>Facturen</h1>
+<h1 class="text-black">Uw Factuur</h1>
 <table class="table">
     <thead>
     <tr>

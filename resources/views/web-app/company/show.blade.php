@@ -51,12 +51,10 @@
                     <div class="form mb-3 shadow-sm">
                         <input  type="email" readonly class="form-control-plaintext bg-gray-100 border-transparent rounded " placeholder="Telefoon nummer" value="{{\Auth::user()->company->bkr_checked_at ?? 'None'}}">
                     </div>
-                    <h2>Gegevens aanpassen</h2>
-                <div class="form mb-3 shadow-sm">
+                <div class="form mb-3 shadow-sm mt-6">
                     <td><button type="button" class="btn btn-primary bg-primary text-white"><a class="text-white" href="{{route("company.edit", $company->id)}}">aanpassen</a></button></td>
-                    <h2>Gegevens verwijderen</h2>
-                    <div class="form mb-3 shadow-sm">
-                        <p> Om u gegevens te laten verwijder moet u een mail sturen naar : privacy@barroc.it</p>
+                    <div class="form mb-3 shadow-sm fw-bold text-center">
+                        <p> Om u gegevens te laten verwijderen moet u een mail sturen naar : privacy@barroc.it</p>
                     </div>
                 </div>
             </div>
@@ -87,7 +85,7 @@
                         <td>{{$invoice->id}}</td>
                         <td>{{$invoice->date}}</td>
                         <td>@if($invoice->paid_at != null) {{$invoice->paid_at}} @else nog niet betaald @endif</td>
-                        <td><button type="button" class="btn btn-primary"><a class="text-white" href="{{route("invoice.show", $invoice->id)}}">Details</a></button></td>
+                        <td><a class="btn btn-primary text-white" href="{{route("invoice.show", $invoice->id)}}">Details</a></td>
                     </tr>
                     @endforeach
                     </tbody>

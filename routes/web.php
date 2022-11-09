@@ -89,5 +89,6 @@ Route::resource('review', Appointment_reviewContoller::class);
 Route::resource('order', OrderController::class);
 Route::resource('user', \App\Http\Controllers\UsersController::class);
 Route::resource('invoice', \App\Http\Controllers\InvoiceController::class);
+Route::resource('confirm', \App\Http\Controllers\ConfirmController::class);
 
 require __DIR__.'/auth.php';

@@ -80,8 +80,8 @@ class CompaniesController extends Controller
      */
     public function show($id)
     {
-        $company = Company::where('contact_id', Auth::id())->get();
-        $invoices = Custom_invoice::where('company_id', $id)->get();
+        $company = Company::findorfail($id);
+        $invoices = Custom_invoice::where('company_id', $company->id)->get();
         return view('web-app.company.show')
             ->with(['company'=> $company, 'invoices' => $invoices]);
     }
