@@ -12,6 +12,7 @@ use \App\Http\Controllers\Maintenance_appointmentsController;
 use App\Http\Controllers\Appointment_reviewContoller;
 use App\Http\Controllers\OrderController;
 use App\Http\Controllers\FilterController;
+use App\Http\Controllers\filterStatusController;
 
 
 use App\Http\Controllers\ProductsController;
@@ -81,6 +82,8 @@ Route::resource('company', CompaniesController::class);
 Route::resource('maintenance', Maintenance_appointmentsController::class);
 
 Route::resource('filter', FilterController::class);
+
+Route::resource('filterStatus', filterStatusController::class);
 
 Route::resource('review', Appointment_reviewContoller::class);
 Route::resource('order', OrderController::class);

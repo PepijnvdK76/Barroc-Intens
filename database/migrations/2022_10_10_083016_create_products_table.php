@@ -19,6 +19,8 @@ return new class extends Migration
             $table->string('description');
             $table->string('image_path')->nullable();
             $table->string('product_code');
+            $table->integer('amount');
+            $table->enum('status', ['Momenteel leverbaar ', 'Uit vooraad']);
             $table->decimal('price');
             $table->unsignedBigInteger('products_category_id')->nullable();
             $table->timestamps();

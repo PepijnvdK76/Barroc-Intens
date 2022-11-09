@@ -36,6 +36,28 @@
         <input type="number" step="any" name="price" class="form-control" style="border-radius: 0.375rem">
     </div>
 
+        <div class="form-group" >
+            <label for="" style="border-radius: 10px;">status</label>
+            <select name="status" style="color: black; border-radius: 10px;">
+                @foreach ($products as $product)
+                    <option value="{{$product->status}}">{{$product->status}}</option>
+                @endforeach
+                    <option value="Momenteel leverbaar">Momenteel leverbaar</option>
+                    <option value="Uit vooraad">Uit vooraad</option>
+
+
+            </select>
+        </div>
+
+    <div class="form-group" >
+        <label for="" style="border-radius: 10px;">amount</label>
+        <input type="number" step="any" name="amount" class="form-control" style="border-radius: 0.375rem">
+    </div>
+
+
+
+
+
 
     <select name="products_category_id" style="color: black; border-radius: 10px;">
         <option value="1">bonen</option>
