@@ -1,5 +1,5 @@
-{{--@extends('layouts.app')--}}
-{{--@section('content')--}}
+@extends('layouts.app')
+@section('content')
     <ul class="nav nav-tabs py-2" id="myTab" role="tablist">
         <li class="nav-item" role="presentation">
             <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home-tab-pane" type="button" role="tab" aria-controls="home-tab-pane" aria-selected="true">User</button>
@@ -53,7 +53,7 @@
                     </div>
                     <h2>Gegevens aanpassen</h2>
                 <div class="form mb-3 shadow-sm">
-                    <td><button type="button" class="btn btn-primary"><a class="text-white" href="{{route("company.edit", $company->id)}}">aanpassen</a></button></td>
+                    <td><button type="button" class="btn btn-primary bg-primary text-white"><a class="text-white" href="{{route("company.edit", $company->id)}}">aanpassen</a></button></td>
                     <h2>Gegevens verwijderen</h2>
                     <div class="form mb-3 shadow-sm">
                         <p> Om u gegevens te laten verwijder moet u een mail sturen naar : privacy@barroc.it</p>
@@ -63,11 +63,11 @@
         </div>
         <div class="tab-pane fade" id="Contract-tab-pane" role="tabpanel" aria-labelledby="Contract-tab" tabindex="0">
             <h1>Contracten</h1>
-            {{--@foreach($contracts as  $company)
-                <h2>Naam: {{$contract->name}}</h2>
+{{--            @foreach($contracts as  $company)--}}
+{{--                <h2>Naam: {{$contract->name}}</h2>--}}
 
 
-            @endforeach--}}
+{{--            @endforeach--}}
         </div>
         <div class="tab-pane fade " id="facturen-tab-pane" role="tabpanel" aria-labelledby="facturen-tab" tabindex="0">
             <div class="container">
@@ -95,4 +95,4 @@
                 </div>
             </div>
         </div>
-{{--@endsection--}}
+@endsection

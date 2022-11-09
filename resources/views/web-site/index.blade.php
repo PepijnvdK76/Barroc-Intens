@@ -8,6 +8,14 @@
     <div class="bg-text">
         <h1>Barroc Intens</h1>
         <p>Heerlijk wakkere koffie</p>
+        <div class="row px-6 pt-4">
+            <div class="col">
+                <input class="btn BarrocYellowBtn px-5 py-3 " type="submit" value="Bonen">
+            </div>
+            <div class="col">
+                <input class="btn BarrocYellowBtn px-5 py-3" type="submit" value="Apparaten">
+            </div>
+        </div>
     </div>
     </div>
 @endsection

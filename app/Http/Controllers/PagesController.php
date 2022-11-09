@@ -63,7 +63,8 @@ class PagesController extends Controller
             return view('web-app/dashboard')
 //                ->with(['company' => $company])
                 ->with(['users' => $users]);
-        }else{
+        }
+        else {
 
 
             $company = Company::where('contact_id', Auth::id())->get();

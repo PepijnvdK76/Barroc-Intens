@@ -1,5 +1,5 @@
 <header class="header">
-    <div class="d-flex align-items-center fixed-top navbar-area">
+    <div class="d-flex align-items-center fixed-top navbar-area shadow-sm">
         <div class="p-2">
             <a href="{{ route('index') }}">
                 <img  src="{{ Vite::asset('public/content/img/logo6_klein.png') }}" width=75%" alt="...">
