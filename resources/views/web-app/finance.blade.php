@@ -54,7 +54,7 @@
                             <tbody>
                             <tr class="border-bottom" >
                                 <th scope="row"></th>
-                                <td><a href="{{route('company.show', $company)}}">{{$company->name}}</a></td>
+                                <td><a href="{{route('finance.show', $company)}}">{{$company->name}}</a></td>
                                 <td>{{$company->phone}}</td>
                                 <td>{{$company->street}}</td>
                                 <td>{{$company->house_number}}</td>

@@ -86,6 +86,8 @@ Route::resource('company', CompaniesController::class);
 Route::resource('parts', PartsController::class);
 
 Route::resource('maintenance', Maintenance_appointmentsController::class);
+Route::get('/maintenance/createAppointment/{id}', [PagesController::class, 'createAppointment'])->name('maintenance.createAppointment');
+
 
 Route::resource('filter', FilterController::class);
 

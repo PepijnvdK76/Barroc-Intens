@@ -63,17 +63,14 @@ class PagesController extends Controller
             return view('web-app/dashboard')
 //                ->with(['company' => $company])
                 ->with(['users' => $users]);
-        }
-        else {
-
-
-            $company = Company::where('contact_id', Auth::id())->get();
-            //$invoices = Custom_invoice::where('company_id', $company->id)->get();
-
+        }else{
             $company = Company::where('contact_id', Auth::id())->first();
             $invoices = Custom_invoice::where('company_id', $company->id)->get();
+            $appointments = Maintenance_appointments::where('company_id', $company->id)->get();
             return view('web-app.company.show')
-                  ->with(['company' => $company, 'invoices' => $invoices]);
+                  ->with(['company' => $company])
+                  ->with(['appointments' => $appointments])
+                  ->with(['invoices' => $invoices]);
         }
 
     }
@@ -119,6 +116,18 @@ class PagesController extends Controller
         $users = User::All();
         return view('web-app/createCustomer')
             ->with(['users' => $users]);
+    }
+
+    public function createAppointment()
+
+    {
+        $companies = Company::all();
+        $products = Product::all();
+        $appointments = Maintenance_appointments::all();
+        return view('web-app/maintenance/create')
+            ->with(['appointments' => $appointments])
+            ->with(['products' => $products])
+            ->with(['companies' => $companies]);
     }
 }
 
