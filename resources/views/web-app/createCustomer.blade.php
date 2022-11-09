@@ -30,6 +30,7 @@
                     <input @if($user->active == 1) disabled @endif type="submit"  class="btn btn-warning ">
                 </form>
             </td>
+
         </tr>
 
         </tbody>

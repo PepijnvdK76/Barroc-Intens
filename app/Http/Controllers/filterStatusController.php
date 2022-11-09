@@ -2,12 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Company;
-use App\Models\Maintenance_appointments;
-use App\Models\Product;
 use Illuminate\Http\Request;
+use App\Models\Product;
 
-class Maintenance_appointmentsController extends Controller
+class filterStatusController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,9 +14,7 @@ class Maintenance_appointmentsController extends Controller
      */
     public function index()
     {
-        $appointments = Maintenance_appointments::all();
-        return view('web-app/maintenance')
-            ->with(['appointments' => $appointments]);
+
     }
 
     /**
@@ -28,13 +24,7 @@ class Maintenance_appointmentsController extends Controller
      */
     public function create()
     {
-        $companies = Company::all();
-        $products = Product::all();
-        $appointments = Maintenance_appointments::all();
-        return view('web-app/maintenance/create')
-            ->with(['appointments' => $appointments])
-            ->with(['products' => $products])
-            ->with(['companies' => $companies]);
+        //
     }
 
     /**
@@ -45,8 +35,30 @@ class Maintenance_appointmentsController extends Controller
      */
     public function store(Request $request)
     {
-        $maintenance_appointment = maintenance_appointments::create($request->except('_token'));
-        return redirect(route('maintenance.index'));
+        if ($request->status == 1)
+        {
+
+            $products = product::all();
+            return view('web-app/inkoop')
+                ->with(['products' => $products]);
+        }
+        elseif ($request->status == 2)
+        {
+            $products = product::where( 'status', "=" ,'Momenteel leverbaar')->get();
+            return view('web-app/inkoop')
+                ->with(['products' => $products]);
+        }
+        elseif ($request->status == 3)
+        {
+
+            $products = product::where('status', '=', 'Uit vooraad')->get();
+            return view('web-app/inkoop')
+                ->with(['products' => $products]);
+        }
+        else
+        {
+            return view('inkoop.index');
+        }
     }
 
     /**
@@ -57,9 +69,7 @@ class Maintenance_appointmentsController extends Controller
      */
     public function show($id)
     {
-        $appointment = Maintenance_appointments::findorfail($id);
-        $company = Company::findorfail($id);
-        return view('web-app/maintenance.show', ['company' => $company, 'appointment' => $appointment]);
+        //
     }
 
     /**
@@ -95,6 +105,4 @@ class Maintenance_appointmentsController extends Controller
     {
         //
     }
-
-
 }

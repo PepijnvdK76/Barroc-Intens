@@ -17,10 +17,17 @@
                             <div class="btn_group">
                                 {{--<form action="" >
                                     @csrf
+<
+
                                     <input type="search" name="search" id="" class="form-control" placeholder="Zoek een product" value="{{$search}}">
+
+
+                                    <input type="search" name="search" id="" class="form-control" placeholder="Zoek een product" value="{{$search}}">
+
                                     <button class="btn btn-default">Search</button>
                                 </form>--}}
                                 <a class="btn btn-warning" href="{{route('finance.create')}}">Maak factuur aan</a>
+
 
                             </div>
                         </div>
@@ -47,7 +54,7 @@
                             <tbody>
                             <tr class="border-bottom" >
                                 <th scope="row"></th>
-                                <td><a href="{{route('company.show', $company)}}">{{$company->name}}</a></td>
+                                <td><a href="{{route('finance.show', $company)}}">{{$company->name}}</a></td>
                                 <td>{{$company->phone}}</td>
                                 <td>{{$company->street}}</td>
                                 <td>{{$company->house_number}}</td>
@@ -68,6 +75,16 @@
                                 </td>
                                 <td>{{$company->updated_at}}</td>
                                 <td><a class="btn btn-warning" href="{{route('finance.edit' , $company)}}">BKR aanpassen</a></td>
+
+                               <td class="buttons d-flex">
+                                    <a class="btn btn-warning" href="{{route('inkoop.edit' , $company)}}">aanpassen</a>
+                                    <form method="POST" action="{{route('inkoop.destroy', $company)}}">
+                                        @csrf
+                                        @method('delete')
+                                        <input class="btn btn-danger bg-danger" type="submit" value="delete">
+                                    </form>
+                                </td>
+
                             </tr>
                             </tbody>
                         @endforeach
@@ -77,6 +94,51 @@
         </div>
     </div>
 </div>
+
+
+    <table class="table table-striped bg-white">
+        <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Bedrijfsnaam</th>
+            <th scope="col">telefoon</th>
+            <th scope="col">straat</th>
+            <th scope="col">huisnummer</th>
+            <th scope="col">stad</th>
+            <th scope="col">landnummer</th>
+            <th scope="col">Betaald op</th>
+            <th scope="col">bkr check</th>
+            <th scope="col">laast geupdate</th>
+            <th scope="col">Medewerker toevoegen</th>
+        </tr>
+        </thead>
+
+        <tbody>
+        @foreach($companies as $company)
+            <tr>
+                <th scope="row">{{$company->id}}</th>
+                <td><a href="{{route('finance.show', $company)}}">{{$company->name}}</a></td>
+                <td>{{$company->phone}}</td>
+                <td>{{$company->street}}</td>
+                <td>{{$company->house_number}}</td>
+                <td>{{$company->city}}</td>
+                <td>{{$company->country_code}}</td>
+                <td>@if(empty($company->invoices->paid_at)) Nog niet betaald  @endif</td>
+                <td>{{$company->bkr_checked_at}}</td>
+                <td>{{$company->updated_at}}</td>
+                <td><a class="btn btn-warning" href="{{route('finance.edit' , $company)}}">BKR aanpassen</a></td>
+                <td>
+
+
+                </td>
+            </tr>
+        @endforeach
+        </tbody>
+
+    </table>
+
+    <a href="{{route('finance.create')}}"  class="btn btn-primary btn-lg btn-block mt-3 mb-3">Maak factuur aan</a>
+
 
 @endsection
 

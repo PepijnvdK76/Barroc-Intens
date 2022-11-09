@@ -12,7 +12,13 @@ use \App\Http\Controllers\Maintenance_appointmentsController;
 use App\Http\Controllers\Appointment_reviewContoller;
 use App\Http\Controllers\OrderController;
 use App\Http\Controllers\FilterController;
+
+
+use App\Http\Controllers\filterStatusController;
+
+
 use App\Http\Controllers\PartsController;
+
 
 
 use App\Http\Controllers\ProductsController;
@@ -82,6 +88,8 @@ Route::resource('company', CompaniesController::class);
 Route::resource('parts', PartsController::class);
 
 Route::resource('maintenance', Maintenance_appointmentsController::class);
+Route::get('/maintenance/createAppointment/{id}', [PagesController::class, 'createAppointment'])->name('maintenance.createAppointment');
+
 
 Route::resource('filter', FilterController::class);
 
