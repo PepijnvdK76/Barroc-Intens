@@ -14,7 +14,17 @@ class ProductsController extends Controller
      */
     public function index(Request $request)
     {
+        $search = $request['search'] ?? "";
 
+        if ($search != "") {
+            //where
+            $products = Product::where('name', 'LIKE', "%$search%")->orWhere('price', 'LIKE', "%$search%")->orWhere('description', 'LIKE', "%$search%")->orWhere('product_code', 'LIKE', "%$search%")->get();
+        } else {
+            $products = Product::all();
+        }
+        $data = compact('products','search');
+        return view('web-app/inkoop')
+            ->with($data);
 
     }
 
@@ -25,8 +35,7 @@ class ProductsController extends Controller
      */
     public function create()
     {
-        $products = Product::all();
-        return view('web-app/inkoop.create', ['products' => $products]);
+        return view('web-app/inkoop.create');
     }
 
     /**
@@ -44,8 +53,6 @@ class ProductsController extends Controller
             'image_path' => 'nullable',
             'product_code' => 'required',
             'price' => 'required',
-            'amount' => 'required',
-            'status' => 'required',
             'products_category_id' => 'required',
 
         ]);
@@ -56,8 +63,6 @@ class ProductsController extends Controller
         $product->image_path = $request->image_path;
         $product->product_code = $request->product_code;
         $product->price = $request->price;
-        $product->amount = $request->amount;
-        $product->status = $request->status;
         $product->products_category_id = $request->products_category_id;
         $product->save();
 
