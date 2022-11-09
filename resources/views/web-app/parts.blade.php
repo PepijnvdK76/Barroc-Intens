@@ -14,7 +14,6 @@
                             </div>
                             <div class="col-sm-9 col-xs-12 text-right">
                                 <div class="btn_group">
-                                    <a class="btn btn-warning mb-2" href="">Product aanmaken</a>
 
                                     <form action="" >
                                         @csrf

@@ -1,11 +1,9 @@
 @extends('layouts.app')
 
 @section('headerName')
-    @livewireStyles
     <h1 class="text-black">Inkoop</h1>
 @endsection
 @section('content')
-    @livewireScripts
     <div class="container">
         <div class="row">
             <div class="col-md-offset-1 ">
