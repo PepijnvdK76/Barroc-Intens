@@ -1,9 +1,6 @@
 @extends('layouts.app')
 
 @section('content')
-
-
-
     <div class="container-sm d-flex" style="max-width: 5000px; color: white; align-items: center; padding-left: 250px">
 
         <div class="shadow p-3 mb-5  rounded" style="background-color: #212121; margin-top: 50px; border-radius: 10px;  width: 800px;">
@@ -55,8 +52,8 @@
     <div class="form-group">
         <label for="">Categorie</label>
         <select class="form-control" name="products_category_id" style="color: black; border-radius: 10px;">
-            <option value="1">bonen</option>
-            <option value="2">apparaten</option>
+            <option value="1">apparaten</option>
+            <option value="2">bonen</option>
             <option value="3">materiaal</option>
         </select>
     </div>
