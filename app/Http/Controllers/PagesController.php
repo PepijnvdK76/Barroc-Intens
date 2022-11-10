@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Company;
+use App\Models\Contract;
 use App\Models\Custom_invoice;
 use App\Models\Maintenance_appointments;
 use App\Models\Product;
@@ -69,11 +70,12 @@ class PagesController extends Controller
             $company = Company::where('contact_id', Auth::id())->first();
             $invoices = Custom_invoice::where('company_id', $company->id)->get();
             $appointments = Maintenance_appointments::where('company_id', $company->id)->get();
-
+            $contracts = Contract::where('company_id', $company->id)->get();
             return view('web-app.company.show')
                   ->with(['company' => $company])
                   ->with(['appointments' => $appointments])
-                  ->with(['invoices' => $invoices]);
+                  ->with(['invoices' => $invoices])
+                ->with(['contracts' => $contracts]);
         }
 
     }

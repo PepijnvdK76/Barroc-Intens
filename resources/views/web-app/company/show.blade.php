@@ -57,6 +57,9 @@
                 <div class="form mb-3 mt-6">
                     <td><button type="button" class="btn btn-primary bg-primary text-white"><a class="text-white" href="{{route("company.edit", $company->id)}}">aanpassen</a></button></td>
                     <div class="form mb-3 fw-bold text-center">
+                <div class="form mb-3 shadow-sm mt-6">
+{{--                    <td><button type="button" class="btn btn-primary bg-primary text-white"><a class="text-white" href="{{route("company.edit", $company->id)}}">aanpassen</a></button></td>--}}
+                    <div class="form mb-3 shadow-sm fw-bold text-center">
                         <p> Om u gegevens te laten verwijderen moet u een mail sturen naar : privacy@barroc.it</p>
                     </div>
                 </div>
@@ -64,11 +67,40 @@
         </div>
         <div class="tab-pane fade" id="Contract-tab-pane" role="tabpanel" aria-labelledby="Contract-tab" tabindex="0">
             <h1>Contracten</h1>
-{{--            @foreach($contracts as  $company)--}}
-{{--                <h2>Naam: {{$contract->name}}</h2>--}}
+            <table class="table">
+                <thead>
+                <tr>
+                    <th>id</th>
+                    <th>periode</th>
+                    <th>start</th>
+                    <th>eind</th>
+                </tr>
+
+                </thead>
+
+                @foreach($contracts as  $contract)
+                    <tbody>
+                    <tr>
+                        <td>{{$contract->id}}</td>
+                        <td>{{$contract->periode}}</td>
+                        <td> {{$contract->start_contract}}</td>
+                        @if($contract->end_contract == null)
+                           <td class="text-black">nog niet gestopt</td>
+                        @else
+                            <td> {{$contract->end_contract}}</td>
+                        @endif
+
+                    </tr>
+
+                    </tbody>
+
+                @endforeach
 
 
-{{--            @endforeach--}}
+            </table>
+
+
+
         </div>
         <div class="tab-pane fade " id="facturen-tab-pane" role="tabpanel" aria-labelledby="facturen-tab" tabindex="0">
             <div class="container">

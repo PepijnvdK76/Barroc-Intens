@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 use App\Models\Company;
 
+use App\Models\Contract;
 use App\Models\Custom_invoice;
 use App\Models\Custom_invoice_product;
 use App\Models\Maintenance_appointments;
@@ -85,8 +86,9 @@ class CompaniesController extends Controller
         $company = Company::where('contact_id', Auth::id())->get();
         $appointments = Maintenance_appointments::where('company_id', $id)->get();
         $invoices = Custom_invoice::where('company_id', $id)->get();
+        $contracts = Contract::where('company_id', $id)->get();
         return view('web-app.company.show')
-            ->with(['company'=> $company, 'invoices' => $invoices, 'appointments' => $appointments]);
+            ->with(['company'=> $company, 'invoices' => $invoices, 'appointments' => $appointments, '$contracts' => $contracts]);
     }
 
     /**

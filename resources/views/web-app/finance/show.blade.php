@@ -28,6 +28,46 @@
             @endforeach
         </tbody>
     </table>
+
+    <h3>contracten</h3>
+
+    <table class="table">
+        <thead>
+        <tr>
+            <th>id</th>
+            <th>periode</th>
+            <th>start</th>
+            <th>eind</th>
+            <th>stoppen</th>
+        </tr>
+
+        </thead>
+
+        @foreach($contracts as  $contract)
+            <tbody>
+            <tr>
+                <td>{{$contract->id}}</td>
+                <td>{{$contract->periode}}</td>
+                <td> {{$contract->start_contract}}</td>
+                @if($contract->end_contract == null)
+                    <td class="text-black">nog niet gestopt</td>
+                    <form action="{{route('contract.update', $contract)}}" method="POST">
+                        @csrf
+                        @method('put')
+                        <td><input class="btn btn-primary bg-primary" type="submit" value="stoppen"></td>
+                    </form>
+
+                @else
+                    <td> {{$contract->end_contract}}</td>
+                @endif
+            </tr>
+
+            </tbody>
+
+        @endforeach
+
+
+    </table>
 @endsection
 
 

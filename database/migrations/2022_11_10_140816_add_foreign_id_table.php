@@ -71,6 +71,11 @@ return new class extends Migration
             $table->foreign('product_id')
                 ->references('id')->on('products');
         });
+
+        Schema::table('contracts', function (Blueprint $table) {
+            $table->foreign('company_id')
+                ->references('id')->on('companies');
+        });
     }
 
     /**

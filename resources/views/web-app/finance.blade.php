@@ -99,6 +99,8 @@
 
     <a href="{{route('finance.create')}}"  class="btn btn-primary btn-lg btn-block mt-3 mb-3">Maak factuur aan</a>
 
+<a href="{{route('contract.create')}}"  class="btn btn-primary btn-lg btn-block mt-3 mb-3">Maak contract aan</a>
+
 
 @endsection
 

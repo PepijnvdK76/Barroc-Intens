@@ -10,6 +10,7 @@
         <th scope="col">naam product</th>
         <th scope="col">prijs per product</th>
         <th scope="col">hoeveelheid</th>
+        <th scope="col">subtotaal</th>
         <th scope="col">Datum</th>
         <th scope="col">Betaald om</th>
     </tr>
@@ -20,6 +21,7 @@
             <td>{{$Product->name}}</td>
             <td>{{$invoiceProduct->price_per_product}}</td>
             <td>{{$invoiceProduct->amount}}</td>
+            <td>$ {{$invoiceProduct->amount * $invoiceProduct->price_per_product}}</td>
             <td>{{$invoice->date}}</td>
             @if($invoice->paid_at != null) <td style="color:green">{{$invoice->paid_at}}</td> @else <td style="color: red;">nog niet betaald</td> @endif</tr>
     </tbody>

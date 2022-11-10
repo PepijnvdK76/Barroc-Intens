@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Company;
+use App\Models\Contract;
 use App\Models\Custom_invoice;
 use App\Models\Product;
 use Illuminate\Http\Request;
@@ -57,9 +58,11 @@ class FinanceController extends Controller
             ->where("company_id", "=", $id)
             ->get();
         $company = Company::findOrFail($id);
+        $contracts = Contract::where('company_id', $company->id)->get();
         return view('web-app/finance.show', [
             'company' => $company,
-            'invoices' => $invoices
+            'invoices' => $invoices,
+            'contracts' => $contracts
         ]);
     }
 
