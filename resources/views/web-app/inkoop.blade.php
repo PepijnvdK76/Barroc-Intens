@@ -34,7 +34,7 @@
             <table class="table">
                 <thead>
                 <tr>
-
+                    <th scope="col">Naam</th>
                     <th scope="col">Beschrijving</th>
                     <th scope="col">Product code</th>
                     <th scope="col">Prijs</th>
@@ -44,7 +44,7 @@
                 </tr>
                 </thead>
                 @foreach($products as $product)
-
+                    <td>{{$product->name}}</td>
                     <td>{{$product->description}}</td>
                     <td>{{$product->product_code}}</td>
                     <td>{{$product->price}}</td>
