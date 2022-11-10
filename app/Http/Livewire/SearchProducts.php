@@ -22,7 +22,9 @@ class SearchProducts extends Component
         if (empty($this->searchWord)) {
             $this->searchResults = [];
         } else {
-            $this->searchResults = Product::where('name', 'LIKE', '%' . $this->searchWord . '%')->orWhere('price', 'LIKE', '%' . $this->searchWord . '%')->orWhere('description', 'LIKE', '%' . $this->searchWord . '%')->orWhere('product_code', 'LIKE', '%' . $this->searchWord . '%')->get();
+            $this->searchResults = Product::where('name', 'LIKE', '%' . $this->searchWord . '%')
+                ->orWhere('price', 'LIKE', '%' . $this->searchWord . '%')->orWhere('description', 'LIKE', '%' . $this->searchWord . '%')
+                ->orWhere('product_code', 'LIKE', '%' . $this->searchWord . '%')->get();
 
         }
 
