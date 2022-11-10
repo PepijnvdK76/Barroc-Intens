@@ -14,11 +14,6 @@
 
                 <div class="col-sm-9 col-xs-12 text-right">
                     <div class="btn_group">
-
-                        <a class="btn btn-warning mb-2" href="{{route('inkoop.create')}}">Product aanmaken</a>
-
-
-
                         <form action="{{route('filterStatus.store')}}" method="POST">
 
                                 @csrf
@@ -27,11 +22,9 @@
                                     <option value="2">Momenteel leverbaar</option>
                                     <option value="3">Uit vooraad</option>
                                 </select>
-                                <input type="submit" value="filter opslaan" class="btn btn-primary bg-primary">
-                            </form>
-
-
-
+                            <a class="btn btn-warning mb-2" href="{{route('inkoop.create')}}" style="margin-top: 8px">Product aanmaken</a>
+                            <input type="submit" value="filter opslaan" class="btn btn-primary bg-primary">
+                        </form>
                     </div>
                 </div>
             </div>
