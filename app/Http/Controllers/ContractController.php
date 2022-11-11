@@ -82,7 +82,7 @@ class ContractController extends Controller
     public function update(Request $request, $id)
     {
         $contract = Contract::findorfail($id);
-        $contract->end_contract = today();
+        $contract->end_contract = now()->addDays(60);
         $contract->save();
         return back();
     }

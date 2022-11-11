@@ -76,27 +76,30 @@
                 </thead>
 
                 @foreach($contracts as  $contract)
+                    @if($contract->end_contract >= today())
                     <tbody>
                     <tr>
                         <td>{{$contract->id}}</td>
                         <td>{{$contract->periode}}</td>
-                        <td> {{$contract->start_contract}}</td>
+                        <td> {{\Carbon\Carbon::parse($contract->start_contract)->format('d/m/Y')}}</td>
                         @if($contract->end_contract == null)
                            <td class="text-black">nog niet gestopt</td>
                         @else
-                            <td> {{$contract->end_contract}}</td>
+                            <td> {{\Carbon\Carbon::parse($contract->end_contract)->format('d/m/Y')}}</td>
                         @endif
 
                     </tr>
 
                     </tbody>
-
+@endif
                 @endforeach
 
 
             </table>
 
-
+            <div class="form mb-3 fw-bold text-center">
+                <p> Om contracten te laten stoppen moet u een mail sturen naar : finance@barroc.it</p>
+            </div>
 
         </div>
         <div class="tab-pane fade " id="facturen-tab-pane" role="tabpanel" aria-labelledby="facturen-tab" tabindex="0">
@@ -137,11 +140,13 @@
                 </thead>
                 <tbody>
                 @foreach($appointments as $appointment)
+                    @if($appointment->date >= today())
                     <tr>
                         <td>{{$appointment->id}}</td>
                         <td>{{$appointment->date}}</td>
                         <td>{{$appointment->remark}}</td>
                     </tr>
+                    @endif
                 @endforeach
                 </tbody>
             </table>
