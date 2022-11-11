@@ -67,6 +67,7 @@ class PagesController extends Controller
 
 
         }else{
+            $products = Product::all();
             $company = Company::where('contact_id', Auth::id())->first();
             $invoices = Custom_invoice::where('company_id', $company->id)->get();
             $appointments = Maintenance_appointments::where('company_id', $company->id)->get();
@@ -75,6 +76,7 @@ class PagesController extends Controller
                   ->with(['company' => $company])
                   ->with(['appointments' => $appointments])
                   ->with(['invoices' => $invoices])
+                ->with(['products' => $products])
                 ->with(['contracts' => $contracts]);
         }
 
