@@ -121,10 +121,7 @@ class CompaniesController extends Controller
         $company->country_code = $request->country_code;
         $company->save();
 
-        $company = Company::where('contact_id', Auth::id())->first();
-        $invoices = Custom_invoice::where('company_id', $company->id)->get();
-        return view('web-app.company.show')
-            ->with(['company' => $company, 'invoices' => $invoices]);
+        return redirect('dashboard');
     }
 
     /**
