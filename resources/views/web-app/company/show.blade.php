@@ -57,9 +57,6 @@
                 <div class="form mb-3 mt-6">
                     <td><button type="button" class="btn btn-primary bg-primary text-white"><a class="text-white" href="{{route("company.edit", $company->id)}}">aanpassen</a></button></td>
                     <div class="form mb-3 fw-bold text-center">
-                <div class="form mb-3 shadow-sm mt-6">
-{{--                    <td><button type="button" class="btn btn-primary bg-primary text-white"><a class="text-white" href="{{route("company.edit", $company->id)}}">aanpassen</a></button></td>--}}
-                    <div class="form mb-3 shadow-sm fw-bold text-center">
                         <p> Om u gegevens te laten verwijderen moet u een mail sturen naar : privacy@barroc.it</p>
                     </div>
                 </div>
@@ -136,7 +133,6 @@
                     <th scope="col">Afspraak nummer</th>
                     <th scope="col">Datum</th>
                     <th scope="col">Opmerking</th>
-                    <th scope="col">Details</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -145,7 +141,6 @@
                         <td>{{$appointment->id}}</td>
                         <td>{{$appointment->date}}</td>
                         <td>{{$appointment->remark}}</td>
-                        <td><button type="button" class="btn btn-primary"><a class="text-white" href="{{route("invoice.show", $invoice->id)}}">Details</a></button></td>
                     </tr>
                 @endforeach
                 </tbody>

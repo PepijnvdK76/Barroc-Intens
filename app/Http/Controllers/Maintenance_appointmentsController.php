@@ -46,7 +46,7 @@ class Maintenance_appointmentsController extends Controller
     public function store(Request $request)
     {
         $maintenance_appointment = maintenance_appointments::create($request->except('_token'));
-        return redirect(route('maintenance.index'));
+        return redirect(route('dashboard'));
     }
 
     /**
