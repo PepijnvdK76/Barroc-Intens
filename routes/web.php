@@ -2,7 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 
-use \App\Http\Controllers\PagesController;
+use App\Http\Controllers\PagesController;
 
 use \App\Models\Company;
 use App\Http\Controllers\CompaniesController;
@@ -43,6 +43,9 @@ Route::get('/index', [PagesController::class, 'index'])
     ->name('index');
 
 Route::get('/privacy', [PagesController::class, 'privacy'])
+    ->name('privacy');
+
+Route::get('/termsOfService', [PagesController::class, 'termsOfService'])
     ->name('privacy');
 
 Route::get('/maintenance', [PagesController::class, 'maintenance']);

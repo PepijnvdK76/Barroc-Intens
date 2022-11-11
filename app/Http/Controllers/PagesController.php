@@ -94,6 +94,10 @@ class PagesController extends Controller
     {
         return view('web-site/privacy')  ;
     }
+    public function termsOfService()
+    {
+        return view('web-site/termsOfService')  ;
+    }
     public function contact()
     {
         return view('web-site/contact')  ;

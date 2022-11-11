@@ -2,12 +2,11 @@
 
 namespace Database\Seeders;
 
-use App\Models\Product;
-use App\Models\Product_categorie;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;
 
-class ProductSeeder extends Seeder
+class InvoiceProductsSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -16,8 +15,8 @@ class ProductSeeder extends Seeder
      */
     public function run()
     {
-
-
-
+        $path = public_path('data\invoices_products.sql');
+        $sql = file_get_contents($path);
+        DB::unprepared($sql);
     }
 }

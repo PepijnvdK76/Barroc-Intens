@@ -8,7 +8,6 @@ body,html{
     scrollbar-width: thin;
 
 }
-
 h1{
     color:white;
     font-size: xxx-large;
@@ -36,7 +35,6 @@ color: #212121!important;
     z-index: 99;
     -webkit-transition: all 0.3s ease-out 0s;
     transition: all 0.3s ease-out 0s;
-
 }
 
 header img{
@@ -152,10 +150,15 @@ header img:hover{
     border-bottom-left-radius: 25%;
     border-top-left-radius: 25%;
     padding: 1.7rem !important;
-}
+    color: black!important;
+    transition:  0.3s ;
 
-.header .contactBtn:hover{
-    transition: all 0.3s ease-out 0s;
+}
+.BarrocYellow{
+    color: #ffd700 ;
+}
+.contactBtn:hover{
+    transition:  0.3s ;
     color: white;
     padding-left: 50px !important;
     border-bottom-left-radius: 55%;
@@ -181,21 +184,10 @@ header img:hover{
     height: 100%;
     width: 100%;
 }
-.BarrocYellowBtn{
-    background-color: #ffd700 ;
-    color: black;
-    font-size: x-large;
-}
-.BarrocYellowBtn:hover{
-    color: white;
-    background-color: #ffd700 ;
 
-}
 /* Position text in the middle of the page/image */
 .bg-text {
     font-family: 'Big Shoulders Display', cursive;
-   /* background-color: rgb(0,0,0); !* Fallback color *!
-    background-color: rgba(0,0,0, 0.4); !* Black w/opacity/see-through *!*/
     color: white;
     font-size: 38px;
     position: absolute;
@@ -206,8 +198,6 @@ header img:hover{
     width: 50%;
     padding: 20px;
     text-align: center;
-    border-radius: 25px;
-
 }
 
 .card {
@@ -395,5 +385,7 @@ header img:hover{
         margin: 0 0 10px;
     }
 }
+
+
 
 

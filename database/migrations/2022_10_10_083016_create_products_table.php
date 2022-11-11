@@ -20,6 +20,7 @@ return new class extends Migration
             $table->string('image_path')->nullable();
             $table->string('product_code');
             $table->decimal('price');
+            $table->decimal('amount')->nullable();
             $table->unsignedBigInteger('products_category_id')->nullable();
             $table->timestamps();
         });
