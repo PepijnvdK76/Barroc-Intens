@@ -2,7 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Contract;
+use App\Models\Custom_invoice;
+use App\Models\Custom_invoice_product;
+use App\Models\Maintenance_appointments;
 use App\Models\Product;
+use App\Models\Review_product;
 use Illuminate\Http\Request;
 
 class ProductsController extends Controller
@@ -143,7 +148,26 @@ class ProductsController extends Controller
      */
     public function destroy($id)
     {
-        Product::destroy($id);
-        return back();
+        if(Review_product::where('product_id', $id)->exists())
+        {
+            return redirect()->back()->withError('No post found.');        }
+        elseif(Maintenance_appointments::where('product_id', $id)->exists())
+            {
+                return redirect()->back()->withError('No post found.');            }
+
+                elseif(Custom_invoice_product::where('product_id', $id)->exists())
+                {
+                    return redirect()->back()->withError('No post found.');                }
+
+                    elseif(Custom_invoice::where('product_id', $id)->exists())
+                    {
+                        return redirect()->back()->withError('No post found.');                    }
+
+                        else
+                        {
+                            Product::destroy($id);
+                            return redirect('inkoop');
+                        }
+
     }
 }

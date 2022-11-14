@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Company;
 use App\Models\Contract;
 use App\Models\Custom_invoice;
+use App\Models\Maintenance_appointment_review;
 use App\Models\Maintenance_appointments;
 use App\Models\Product;
 use App\Models\User;
@@ -39,9 +40,11 @@ class PagesController extends Controller
 
     public function maintenance()
     {
+        $orders = Maintenance_appointment_review::all();
         $appointments = Maintenance_appointments::all();
         return view('web-app/maintenance')
-            ->with(['appointments' => $appointments]);
+            ->with(['appointments' => $appointments])
+            ->with(['orders' => $orders]);
     }
 
 
@@ -67,6 +70,7 @@ class PagesController extends Controller
 
 
         }else{
+            $products = Product::all();
             $company = Company::where('contact_id', Auth::id())->first();
             $invoices = Custom_invoice::where('company_id', $company->id)->get();
             $appointments = Maintenance_appointments::where('company_id', $company->id)->get();
@@ -75,6 +79,7 @@ class PagesController extends Controller
                   ->with(['company' => $company])
                   ->with(['appointments' => $appointments])
                   ->with(['invoices' => $invoices])
+                ->with(['products' => $products])
                 ->with(['contracts' => $contracts]);
         }
 

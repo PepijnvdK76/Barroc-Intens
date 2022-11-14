@@ -3,8 +3,11 @@
 namespace App\Http\Controllers;
 
 use App\Models\Company;
+use App\Models\Maintenance_appointment_review;
 use App\Models\Maintenance_appointments;
 use App\Models\Product;
+use App\Models\Review;
+use App\Models\Review_product;
 use Illuminate\Http\Request;
 
 class Maintenance_appointmentsController extends Controller
@@ -16,9 +19,11 @@ class Maintenance_appointmentsController extends Controller
      */
     public function index()
     {
+        $orders = Maintenance_appointment_review::all();
         $appointments = Maintenance_appointments::all();
         return view('web-app/maintenance')
-            ->with(['appointments' => $appointments]);
+            ->with(['appointments' => $appointments])
+            ->with(['orders' => $orders]);
     }
 
     /**
@@ -59,7 +64,7 @@ class Maintenance_appointmentsController extends Controller
     {
         $appointment = Maintenance_appointments::findorfail($id);
         $company = Company::findorfail($id);
-        return view('web-app/maintenance.show', ['company' => $company, 'appointment' => $appointment]);
+        return view('web-app/maintenance.show')->with(['company' => $company, 'appointment' => $appointment]);
     }
 
     /**
