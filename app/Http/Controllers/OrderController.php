@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Maintenance_appointment_review;
+use App\Models\Part;
 use App\Models\Product;
 use App\Models\Review_product;
 use Illuminate\Http\Request;
@@ -27,9 +28,9 @@ class OrderController extends Controller
     public function create()
     {
         $reviews = Maintenance_appointment_review::all();
-        $products = Product::all();
+        $parts = Part::all();
         return view("web-app/order/create")
-            ->with(['reviews' => $reviews,'products' => $products]);
+            ->with(['reviews' => $reviews,'parts' => $parts]);
     }
 
     /**
@@ -45,7 +46,11 @@ class OrderController extends Controller
        $used->product_id = $request->product_id;
         $used->amount = $request->amount;
         $used->save();
-        return back();
+
+        $part = Part::where('id', $request->product_id)->first();
+        $part->amount = $part->amount - $request->amount;
+        $part->save();
+        return redirect('maintenance');
     }
 
     /**

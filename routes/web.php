@@ -46,7 +46,7 @@ Route::get('/privacy', [PagesController::class, 'privacy'])
     ->name('privacy');
 
 Route::get('/termsOfService', [PagesController::class, 'termsOfService'])
-    ->name('privacy');
+    ->name('termsOfService');
 
 Route::get('/maintenance', [PagesController::class, 'maintenance']);
 

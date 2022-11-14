@@ -4,8 +4,10 @@ namespace App\Http\Controllers;
 
 use App\Models\Maintenance_appointment_review;
 use App\Models\Maintenance_appointments;
+use App\Models\Part;
 use App\Models\Product;
 use App\Models\Review;
+use App\Models\Review_product;
 use Illuminate\Http\Request;
 
 class Appointment_reviewContoller extends Controller
@@ -51,6 +53,7 @@ class Appointment_reviewContoller extends Controller
         $review->appointment_id = $request->appointment_id;
         $review->problem = $request->problem;
         $review->save();
+
         return redirect('/order/create');
     }
 
@@ -62,7 +65,15 @@ class Appointment_reviewContoller extends Controller
      */
     public function show($id)
     {
-        //
+
+        $review = Maintenance_appointment_review::findorfail($id);
+        $detail = Review_product::where('review_id', $id)->first();
+        $product = Product::where( 'id', $detail->product_id)->first();
+        return view('web-app/review/show')
+            ->with(['review' => $review])
+            ->with(['detail' => $detail])
+            ->with(['product' => $product]);
+
     }
 
     /**

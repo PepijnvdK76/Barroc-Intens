@@ -12,7 +12,7 @@
             <p class="text-black fs-5"><span class="fw-bold">Datum: </span>{{$appointment->date->format('H:i - d/m/Y')}}</p><br>
             <p class="text-black fs-5"><span class="fw-bold">Opmerking: </span>{{$appointment->remark}}</p>
             <a href="{{route('maintenance.index')}}" class="btn btn-primary mt-4">Ga terug naar overzicht</a><br>
-            <a class="btn btn-primary mt-4" href="{{route('review.edit', $appointment)}}">review aanmaken</a>
+            <a class="btn btn-primary mt-4" href="{{route('review.create', $appointment)}}">review aanmaken</a>
         </div>
     </div>
 @endsection
