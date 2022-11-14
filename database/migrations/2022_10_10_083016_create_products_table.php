@@ -21,6 +21,7 @@ return new class extends Migration
             $table->string('product_code');
             $table->decimal('price');
             $table->decimal('amount')->nullable();
+            $table->enum('status', ['momenteel leverbaar', 'uit vooraad']);
             $table->unsignedBigInteger('products_category_id')->nullable();
             $table->timestamps();
         });
