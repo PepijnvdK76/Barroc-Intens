@@ -18,10 +18,10 @@
                         <form action="{{route('filterStatus.store')}}" method="POST">
 
                                 @csrf
-                                <select class="form-control" id="status" name="status" style="color: black;">
-                                    <option value="1">alles</option>
-                                    <option value="2">Momenteel leverbaar</option>
-                                    <option value="3">Uit vooraad</option>
+                                <select class="form-control" id="status" name="status">
+                                    <option value="1" style="color: black">alles</option>
+                                    <option value="2" style="color: black">Momenteel leverbaar</option>
+                                    <option value="3" style="color: black">Uit vooraad</option>
                                 </select>
                             <input type="submit" value="filter opslaan" class="btn btn-primary bg-primary">
                         </form>
