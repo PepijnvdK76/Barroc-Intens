@@ -15,7 +15,6 @@
                             <div class="card-body">
                                 <h5 class="card-title">{{$machine->name}}</h5>
                                 <h6 class="card-subtitle mb-2 text-muted">{{$machine->product_code}}</h6>
-                                <p class="card-text">{{$machine->description}}</p>
                             </div>
                             <div class="card-footer text-muted text-center">
                                 <a href="{{ route('offerte') }}" class="btn mr-2 "><i class="fas fa-link"></i> Contact ons</a>

@@ -11,10 +11,10 @@
             @foreach($beans as $bean)
                 <div class="col d-flex justify-content-center">
                 <div class="card" style="width: 18rem;">
-                    <img src="{{ Vite::asset('public/content/img/coffeeBeans.jpg') }}" class="card-img-top" alt="...">
+                    <img src="{{ Vite::asset('public/content/img/coffeeBeans.jpg')}}" class="card-img-top" alt="...">
                     <div class="card-body">
                         <h5 class="card-title">{{$bean->name}}</h5>
-                        <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
+
                         <p class="card-text">{{$bean->description}}</p>
                     </div>
                     <div class="card-footer text-muted text-center">

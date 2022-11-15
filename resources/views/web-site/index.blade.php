@@ -8,19 +8,16 @@
     <div class="bg-text">
         <h1>Barroc Intens</h1>
         <p>Heerlijk wakkere koffie</p>
-        {{--<div class="row px-6 pt-4">
-            <div class="col">
-                <input class="btn BarrocYellowBtn px-5 py-3 " type="submit" value="Bonen">
-            </div>
-            <div class="col">
-                <input class="btn BarrocYellowBtn px-5 py-3" type="submit" value="Apparaten">
-            </div>
-        </div>--}}
     </div>
     </div>
 @endsection
 @section('content')
     <div class="row py-4">
+        <h1 class="text-black">Het verhaal achter Barroc Intens</h1>
+
+        De gebroeders Maarten en Joris Pulles hebben na het afronden van hun studie de gok gewaagd om een onderneming te starten. De liefde voor koffie ontstond toen Maarten tijdens een stage in Lucca, Italië de vurige passie van het Italiaanse volk voor koffie ervoer. Zijn droom was om een brug te slaan tussen deze passie en de 'slappe koffie' cultuur die heerst binnen de Nederlandse maatschappij.
+
+        Dat en de toevallige timing waarmee het afstudeeronderzoek van zijn broer Joris werd afgerond (Joris onderzocht het verband tussen succesvolle ondernemingen en de kwaliteit aan koffie die in deze ondernemingen werd geschonken.) , deed ze besluiten om de stap te nemen om met een heel duidelijke missie de Nederlandse koffiemarkt in te stappen met een revolutionaire koffiemachine die de ambachtelijke Italiaanse wijze van koffie maken in stand zal houden, mét het gebruiksgemak en comfort van de 'alledaagse' koffieautomaat.
         <form method="POST" action="{{route('logout')}}">
             @csrf
             <input class="btn btn-danger bg-danger" type="submit" value="delete">

@@ -48,6 +48,9 @@ Route::get('/privacy', [PagesController::class, 'privacy'])
 Route::get('/termsOfService', [PagesController::class, 'termsOfService'])
     ->name('termsOfService');
 
+Route::get('/cookies', [PagesController::class, 'cookies'])
+    ->name('cookies');
+
 Route::get('/maintenance', [PagesController::class, 'maintenance']);
 
 Route::get('/bonen', [PagesController::class, 'bonen'])

@@ -103,6 +103,10 @@ class PagesController extends Controller
     {
         return view('web-site/termsOfService')  ;
     }
+    public function cookies()
+    {
+        return view('web-site/cookies')  ;
+    }
     public function contact()
     {
         return view('web-site/contact')  ;

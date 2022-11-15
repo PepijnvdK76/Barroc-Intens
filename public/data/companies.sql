@@ -1,4 +1,4 @@
-INSERT INTO companies  (id,name,phone,street,house_number,city,country_code,bkr_checked_at,contact_id)
+INSERT INTO companies (id,name,phone,street,house_number,city,country_code,bkr_checked_at,contact_id)
 VALUES
     (2,'Donec Nibh LLC','04 75 24 14 50','Drive',436,'Rangiora','GH','goed',155),
     (3,'Elit Corporation','04 61 85 12 83','30 2nd',121,'Jiangxi','BN','goed',126),
@@ -96,7 +96,7 @@ VALUES
     (91,'Justo Nec Limited','08 07 18 28 63','Lane Magnolia',257,'Limón (Puerto Limón]','CK','goed',38);
 INSERT INTO companies (id,name,phone,street,house_number,city,country_code,bkr_checked_at,contact_id)
 VALUES
-    (92,'Amet Ante PC','07 99 23 07 54','Street North Willow',56,'Owerri','CW','goed',1),
+    (92,'Amet Ante PC','07 99 23 07 54','Street North Willow',56,'Owerri','CW','goed',2),
     (93,'Velit In Aliquet Industries','06 17 54 42 58','Creekside Drive',211,'Kano','LS','goed',104),
     (94,'Eu Ligula LLC','04 46 10 34 58','George Street',228,'Penrith','IT','goed',176),
     (95,'Vestibulum Corp.','04 47 52 93 27','Center Street Route',403,'Dublin','MF','goed',70),
