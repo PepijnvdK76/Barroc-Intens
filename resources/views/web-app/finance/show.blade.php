@@ -3,7 +3,7 @@
 @section('content')
 
     {{--    <a href=""  class="btn btn-primary btn-lg btn-block">Zie klanten lijst</a><br>--}}
-    <h2 class="text-black fs-4 fw-bold">Alle facturen van bedrijf: {{$company->name}}</h2>
+    <h2 class="text-black fs-4 fw-bold">Alle facturen en contracten van bedrijf: {{$company->name}}</h2>
     <a href="{{route('finance.create')}}"  class="btn btn-primary btn-lg btn-block mt-3 mb-3">Maak factuur aan</a>
 
 
@@ -21,7 +21,7 @@
             @foreach($invoices as $invoice)
                 <tr>
                     <th scope="row">{{$invoice->id}}</th>
-                    <td>@if(empty($invoice->paid_at)) Nog niet betaald   @else {{$invoice->paid_at->format('d-m-Y')}} @endif</td>
+                    <td>@if(empty($invoice->paid_at)) Nog niet betaald   @else Betaald op {{$invoice->paid_at->format('d-m-Y')}} @endif</td>
                     <td>{{$invoice->company_id}}</td>
                     <td><a class="btn btn-warning" href="{{route('finance.updatePaidStatus' , $invoice)}}">Status aanpassen</a></td>
                 </tr>
@@ -29,7 +29,7 @@
         </tbody>
     </table>
 
-    <h3>contracten</h3>
+    <h2 class="text-black fs-4 mb-3 fw-bold">Contracten</h2>
 
     <table class="table">
         <thead>
