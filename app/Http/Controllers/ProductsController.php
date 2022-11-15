@@ -60,6 +60,7 @@ class ProductsController extends Controller
             'image_path' => 'nullable',
             'product_code' => 'required',
             'price' => 'required',
+            'status' => 'required',
             'amount' => 'required',
             'status' => 'required',
             'products_category_id' => 'required',
@@ -72,6 +73,7 @@ class ProductsController extends Controller
         $product->image_path = $request->image_path;
         $product->product_code = $request->product_code;
         $product->price = $request->price;
+        $product->status = $request->status;
         $product->amount = $request->amount;
         $product->status = $request->status;
         $product->products_category_id = $request->products_category_id;
