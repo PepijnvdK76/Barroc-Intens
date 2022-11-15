@@ -30,5 +30,8 @@
     </div>
 </form>
 
+
+<a href="{{route('maintenance.index')}}" class="btn btn-primary bg-primary">Ga terug naar het overzicht</a>
+
 @endsection
 

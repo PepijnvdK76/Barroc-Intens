@@ -14,7 +14,7 @@
             <button class="nav-link" id="facturen-tab" data-bs-toggle="tab" data-bs-target="#Maintenance-tab-pane" type="button" role="tab" aria-controls="Maintenance-tab-pane" aria-selected="false">Storingsaanvragen</button>
         </li>
         <li class="nav-item" role="presentation">
-            <button class="nav-link" id="facturen-tab" data-bs-toggle="tab" data-bs-target="#afspraak-tab-pane" type="button" role="tab" aria-controls="afspraak-tab-pane-tab-pane" aria-selected="false">afspraak aanmaken</button>
+            <button class="nav-link" id="facturen-tab" data-bs-toggle="tab" data-bs-target="#afspraak-tab-pane" type="button" role="tab" aria-controls="afspraak-tab-pane-tab-pane" aria-selected="false">Afspraak maken</button>
         </li>
     </ul>
     <div class="tab-content" id="myTabContent">
@@ -58,7 +58,7 @@
                         <input  type="email" readonly class="form-control-plaintext bg-gray-100 border-transparent rounded " placeholder="Telefoon nummer" value="{{\Auth::user()->company->bkr_checked_at ?? 'None'}}">
                     </div>
                 <div class="form mb-3 mt-6">
-                    <td><button type="button" class="btn btn-primary bg-primary text-white"><a class="text-white" href="{{route("company.edit", $company->id)}}">aanpassen</a></button></td>
+                    <td><a class="btn " style="background-color: #ffd700;" href="{{route("company.edit", $company->id)}}">aanpassen</a></button></td>
                     <div class="form mb-3 fw-bold text-center">
                         <p> Om u gegevens te laten verwijderen moet u een mail sturen naar : privacy@barroc.it</p>
                     </div>
@@ -123,7 +123,7 @@
                         <td>{{$invoice->id}}</td>
                         <td>{{$invoice->date}}</td>
                         <td>@if($invoice->paid_at != null) {{$invoice->paid_at}} @else nog niet betaald @endif</td>
-                        <td><a class="btn btn-primary text-white" href="{{route("invoice.show", $invoice->id)}}">Details</a></td>
+                        <td><a class="btn " style="background-color: #ffd700;" href="{{route("invoice.show", $invoice->id)}}">Details</a></td>
                     </tr>
                     @endforeach
                     </tbody>
@@ -154,7 +154,7 @@
             </table>
         </div>
         <div class="tab-pane fade" id="afspraak-tab-pane" role="tabpanel" aria-labelledby="afspraak-tab" tabindex="0">
-            <h1>storings afspraak maken</h1>
+            <h1>Storings afspraak maken</h1>
 
             <?php $datetoday = date("d-m-Y H:i"); ?>
             <form action="{{route('maintenance.store')}}" method="post">
@@ -185,7 +185,7 @@
                     <label for="date" class="form-label">Datum</label>
                     <input type="datetime-local" class="form-control" value="<?php echo $datetoday ?>" id="date" name="date" style="border-radius: 6px">
                 </div>
-                <input type="submit" value="Maak afpraak aan" class="btn btn-primary bg-primary">
+                <input type="submit" value="Maak afspraak aan" class="btn " style="background-color: #ffd700;">
             </form>
         </div>
         </div>

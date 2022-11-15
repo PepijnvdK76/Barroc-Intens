@@ -10,7 +10,7 @@
         <th scope="col">naam product</th>
         <th scope="col">prijs per product</th>
         <th scope="col">hoeveelheid</th>
-        <th scope="col">subtotaal</th>
+        <th scope="col">totaal</th>
         <th scope="col">Datum</th>
         <th scope="col">Betaald om</th>
     </tr>
@@ -27,6 +27,6 @@
     </tbody>
 </table>
 
-    <button class="btn btn-primary"><a class="text-white" href="{{route('dashboard')}}">Terug naar overzicht</a></button>
+   <a class="btn" style="background-color: #ffd700" href="{{route('dashboard')}}">Terug naar overzicht</a>
 </div>
 @endsection
