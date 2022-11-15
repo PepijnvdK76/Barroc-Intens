@@ -2,7 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Maintenance_appointment_review;
 use App\Models\Maintenance_appointments;
+use App\Models\Review;
+use App\Models\Review_product;
 use Illuminate\Http\Request;
 
 class FilterController extends Controller
@@ -35,29 +38,29 @@ class FilterController extends Controller
      */
     public function store(Request $request)
     {
+        $appointments = null;
+
         if ($request->tijd_id == 1)
         {
             $appointments = Maintenance_appointments::all();
-            return view('web-app/maintenance')
-                ->with(['appointments' => $appointments]);
+
         }
         elseif ($request->tijd_id == 2)
         {
             $date = now()->subDays(7);
             $appointments = Maintenance_appointments::whereDate('date', '>=', $date)->get();
-            return view('web-app/maintenance')
-                ->with(['appointments' => $appointments]);
         }
         elseif ($request->tijd_id == 3)
         {
             $appointments = Maintenance_appointments::whereDate('date', '=', today())->get();
-            return view('web-app/maintenance')
-                ->with(['appointments' => $appointments]);
+
         }
-        else
-        {
-            return view('maintenance.index');
-        }
+
+        $orders = Maintenance_appointment_review::all();
+        return view('web-app/maintenance')
+            ->with(['appointments' => $appointments])
+            ->with(['orders' => $orders]);
+
     }
 
     /**
