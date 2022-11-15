@@ -23,9 +23,10 @@
                                     <option value="2">Momenteel leverbaar</option>
                                     <option value="3">Uit vooraad</option>
                                 </select>
-                            <a class="btn btn-warning mb-2" href="{{route('inkoop.create')}}" style="margin-top: 8px">Product aanmaken</a>
                             <input type="submit" value="filter opslaan" class="btn btn-primary bg-primary">
                         </form>
+
+                        <a class="btn btn-warning mb-2" href="{{route('inkoop.create')}}" style="margin-top: 8px">Product aanmaken</a>
                     </div>
                 </div>
             </div>
